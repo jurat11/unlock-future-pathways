@@ -6,22 +6,22 @@ const About = () => {
     {
       icon: Target,
       title: "Our Mission",
-      description: "Delivering free and accessible education to rural areas of Uzbekistan, empowering young minds to reach their full potential."
+      description: "Making international university admissions accessible to Uzbek students through expert guidance and proven strategies."
     },
     {
       icon: Heart,
-      title: "Our Values",
-      description: "We believe education is a fundamental right. Our non-profit organization is committed to breaking down barriers to quality learning."
+      title: "Our Story",
+      description: "Started with podcasting successful Ivy League admits, now supporting students with comprehensive admissions services."
     },
     {
       icon: Users,
       title: "Community Impact",
-      description: "Through interviews, lectures, and speeches, we inspire youngsters to pursue the best educational opportunities available."
+      description: "Over 50,000 viewers trust our content. We've helped students get into University of Chicago, Duke, Carnegie Mellon Qatar, and NYU."
     },
     {
       icon: Lightbulb,
       title: "Our Approach",
-      description: "We support students through articles, discussions, and community building, creating a comprehensive learning ecosystem."
+      description: "Three experts per student: Strategist for planning, Essay Mentor for writing, and Assistant for technical support."
     }
   ];
 
@@ -30,11 +30,11 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="text-primary">Unlock</span>
+            About <span className="text-primary">UNLOCK UZBEKISTAN</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a fully non-profit education organization dedicated to transforming 
-            lives through accessible, high-quality education in Uzbekistan.
+            Founded in 2022 in Tashkent, we started by podcasting successful early Uzbek admits to Ivy League schools. 
+            Now with 50,000+ viewers, we offer comprehensive admissions support through our "Accepted" program.
           </p>
         </div>
 
@@ -60,31 +60,31 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Why Choose Our Premium Course?
+                Why Choose Accepted?
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Comprehensive Curriculum:</strong> Carefully designed modules covering all essential topics for academic success.
+                    <strong className="text-foreground">Expert Team:</strong> Work with 3 specialists - Strategist, Essay Mentor, and Assistant for complete coverage.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Expert Mentorship:</strong> Learn from experienced educators and industry professionals.
+                    <strong className="text-foreground">Two-Track System:</strong> Choose your universities or trust our selection with 100% refund guarantee.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Personalized Support:</strong> Individual attention and guidance throughout your learning journey.
+                    <strong className="text-foreground">Complete Support:</strong> From August 1 until final decisions, covering all 16 checklist items.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Proven Results:</strong> 95% of our students achieve their educational goals.
+                    <strong className="text-foreground">Proven Success:</strong> Students accepted to top universities like UChicago, Duke, Carnegie Mellon Qatar.
                   </p>
                 </div>
               </div>
@@ -92,12 +92,12 @@ const About = () => {
             <div className="relative">
               <div className="bg-primary/5 rounded-xl p-8 border border-primary/20">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">1000+</div>
-                  <div className="text-muted-foreground mb-4">Students Impacted</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">50+</div>
-                  <div className="text-muted-foreground mb-4">Rural Communities Reached</div>
-                  <div className="text-2xl font-bold text-success mb-2">5 Years</div>
-                  <div className="text-muted-foreground">Of Educational Excellence</div>
+                  <div className="text-4xl font-bold text-primary mb-2">50K+</div>
+                  <div className="text-muted-foreground mb-4">Podcast Viewers</div>
+                  <div className="text-2xl font-bold text-foreground mb-2">1450</div>
+                  <div className="text-muted-foreground mb-4">Avg SAT Score</div>
+                  <div className="text-2xl font-bold text-success mb-2">2022</div>
+                  <div className="text-muted-foreground">Founded in Tashkent</div>
                 </div>
               </div>
             </div>

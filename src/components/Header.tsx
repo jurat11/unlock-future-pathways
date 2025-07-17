@@ -23,8 +23,8 @@ const Header = () => {
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="#courses" className="text-foreground hover:text-primary transition-colors">
-              Courses
+            <a href="#accepted-program" className="text-foreground hover:text-primary transition-colors">
+              Accepted
             </a>
             <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">
               Testimonials
@@ -36,8 +36,12 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="hero" size="sm">
-              Enroll Now
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Apply Now
             </Button>
           </div>
 
@@ -62,11 +66,11 @@ const Header = () => {
                 About
               </a>
               <a 
-                href="#courses" 
+                href="#accepted-program" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Courses
+                Accepted
               </a>
               <a 
                 href="#testimonials" 
@@ -82,8 +86,16 @@ const Header = () => {
               >
                 Contact
               </a>
-              <Button variant="hero" size="sm" className="w-fit">
-                Enroll Now
+              <Button 
+                variant="hero" 
+                size="sm" 
+                className="w-fit"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Apply Now
               </Button>
             </nav>
           </div>

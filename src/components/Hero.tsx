@@ -12,12 +12,13 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Unlock Your
-                <span className="text-primary block">Educational Future</span>
+                Get
+                <span className="text-primary block">Accepted</span>
+                to Your Dream University
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Join Unlock's premium admission course and get the education you deserve. 
-                We're bringing world-class learning opportunities to rural Uzbekistan.
+                UNLOCK UZBEKISTAN's most complete admissions package. Work with 3 experts: 
+                Strategist, Essay Mentor, and Assistant. Choose our university selection for 100% refund guarantee.
               </p>
             </div>
 
@@ -25,29 +26,39 @@ const Hero = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Expert Instructors</span>
+                <span className="text-foreground font-medium">3 Expert Team per Student</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Interactive Learning</span>
+                <span className="text-foreground font-medium">100% Refund Guarantee*</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Career Support</span>
+                <span className="text-foreground font-medium">Complete Application Support</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Community Access</span>
+                <span className="text-foreground font-medium">From Aug 1 to Final Decision</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-                Start Your Journey
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={() => document.getElementById('accepted-program')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Apply to Accepted
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Learn More
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Schedule Consultation
               </Button>
             </div>
 
@@ -57,22 +68,22 @@ const Hero = () => {
                 <div className="flex items-center justify-center mb-2">
                   <Users className="text-primary h-6 w-6" />
                 </div>
-                <div className="text-2xl font-bold text-foreground">500+</div>
-                <div className="text-sm text-muted-foreground">Students</div>
+                <div className="text-2xl font-bold text-foreground">50K+</div>
+                <div className="text-sm text-muted-foreground">Podcast Viewers</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <BookOpen className="text-primary h-6 w-6" />
                 </div>
-                <div className="text-2xl font-bold text-foreground">50+</div>
-                <div className="text-sm text-muted-foreground">Courses</div>
+                <div className="text-2xl font-bold text-foreground">1450</div>
+                <div className="text-sm text-muted-foreground">Average SAT Score</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Award className="text-primary h-6 w-6" />
                 </div>
-                <div className="text-2xl font-bold text-foreground">95%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+                <div className="text-2xl font-bold text-foreground">3</div>
+                <div className="text-sm text-muted-foreground">Experts per Student</div>
               </div>
             </div>
           </div>
@@ -92,11 +103,15 @@ const Hero = () => {
             <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Next cohort starts</p>
-                  <p className="font-semibold text-foreground">February 15, 2025</p>
+                  <p className="text-sm text-muted-foreground">Applications start</p>
+                  <p className="font-semibold text-foreground">August 1, 2025</p>
                 </div>
-                <Button variant="hero" size="sm">
-                  Reserve Spot
+                <Button 
+                  variant="hero" 
+                  size="sm"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get Started
                 </Button>
               </div>
             </Card>
