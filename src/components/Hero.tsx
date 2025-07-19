@@ -12,13 +12,13 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Get
-                <span className="text-primary block">Accepted</span>
-                to Your Dream University
+                Orzuingizdagi
+                <span className="text-primary block">Universitetga</span>
+                Qabul Bo'ling
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                UNLOCK UZBEKISTAN's most complete admissions package. Work with 3 experts: 
-                Strategist, Essay Mentor, and Assistant. Choose our university selection for 100% refund guarantee.
+                UNLOCK UZBEKISTAN ning eng to'liq qabul paketini oling. 3 ta mutaxassis bilan ishlang: 
+                Strategist, Insho Mentori va Yordamchi. Bizning universitet tanlovimizni tanlang va 100% qaytarim kafolatini oling.
               </p>
             </div>
 
@@ -26,19 +26,19 @@ const Hero = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">3 Expert Team per Student</span>
+                <span className="text-foreground font-medium">Har bir talaba uchun 3 ta mutaxassis</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">100% Refund Guarantee*</span>
+                <span className="text-foreground font-medium">100% Qaytarim Kafolati*</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Complete Application Support</span>
+                <span className="text-foreground font-medium">To'liq Ariza Yordami</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">From Aug 1 to Final Decision</span>
+                <span className="text-foreground font-medium">1-Avgustdan Yakuniy Qarorga</span>
               </div>
             </div>
 
@@ -50,7 +50,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => document.getElementById('accepted-program')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Apply to Accepted
+                Accepted ga Ariza Bering
               </Button>
               <Button 
                 variant="outline" 
@@ -58,7 +58,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Schedule Consultation
+                Maslahat Vaqtini Belgilang
               </Button>
             </div>
 
@@ -69,21 +69,21 @@ const Hero = () => {
                   <Users className="text-primary h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">50K+</div>
-                <div className="text-sm text-muted-foreground">Podcast Viewers</div>
+                <div className="text-sm text-muted-foreground">Podcast Ko'ruvchilari</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <BookOpen className="text-primary h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">1450</div>
-                <div className="text-sm text-muted-foreground">Average SAT Score</div>
+                <div className="text-sm text-muted-foreground">O'rtacha SAT Bali</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Award className="text-primary h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">3</div>
-                <div className="text-sm text-muted-foreground">Experts per Student</div>
+                <div className="text-sm text-muted-foreground">Har Talaba Uchun Mutaxassis</div>
               </div>
             </div>
           </div>
@@ -103,15 +103,15 @@ const Hero = () => {
             <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Applications start</p>
-                  <p className="font-semibold text-foreground">August 1, 2025</p>
+                  <p className="text-sm text-muted-foreground">Arizalar boshlanadi</p>
+                  <p className="font-semibold text-foreground">1-Avgust, 2025</p>
                 </div>
                 <Button 
                   variant="hero" 
                   size="sm"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Get Started
+                  Boshlash
                 </Button>
               </div>
             </Card>

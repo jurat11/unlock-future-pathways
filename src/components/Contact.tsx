@@ -10,11 +10,11 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Apply to <span className="text-primary">Accepted</span>
+            <span className="text-primary">Accepted</span> ga Ariza Bering
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to work with 3 experts and get admitted to your dream university? 
-            Start your application or schedule a consultation today.
+            3 ta mutaxassis bilan ishlab orzuingizdagi universitetga qabul bo'lishga tayyormisiz? 
+            Bugun arizangizni boshlang yoki maslahat vaqtini belgilang.
           </p>
         </div>
 
@@ -22,48 +22,48 @@ const Contact = () => {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Apply to Accepted Program</CardTitle>
+              <CardTitle>Accepted Dasturiga Ariza Bering</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">First Name</label>
-                  <Input placeholder="Your first name" />
+                  <label className="text-sm font-medium mb-2 block">Ism</label>
+                  <Input placeholder="Ismingiz" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Last Name</label>
-                  <Input placeholder="Your last name" />
+                  <label className="text-sm font-medium mb-2 block">Familiya</label>
+                  <Input placeholder="Familiyangiz" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input type="email" placeholder="your.email@example.com" />
+                <Input type="email" placeholder="sizning.email@example.com" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Phone Number</label>
+                <label className="text-sm font-medium mb-2 block">Telefon Raqami</label>
                 <Input type="tel" placeholder="+998 90 123 45 67" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Academic Interest</label>
-                <Input placeholder="e.g., Computer Science, Medicine, Business" />
+                <label className="text-sm font-medium mb-2 block">Akademik Qiziqish</label>
+                <Input placeholder="masalan, Kompyuter Fanlari, Tibbiyot, Biznes" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Current Academic Status</label>
-                <Input placeholder="e.g., Grade 11, High School Graduate, University Transfer" />
+                <label className="text-sm font-medium mb-2 block">Hozirgi Akademik Holat</label>
+                <Input placeholder="masalan, 11-sinf, Maktab Bitiruvchisi, Universitet O'tkazma" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Preferred Track</label>
+                <label className="text-sm font-medium mb-2 block">Afzal Ko'rgan Yo'nalish</label>
                 <select className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                  <option value="">Select a track</option>
-                  <option value="student-selected">Student-Selected Universities (No Guarantee)</option>
-                  <option value="our-selected">Our-Selected Universities (100% Refund Guarantee)</option>
-                  <option value="consultation">I need consultation first</option>
+                  <option value="">Yo'nalishni tanlang</option>
+                  <option value="student-selected">Talaba Tanlagan Universitetlar (Kafolatsiz)</option>
+                  <option value="our-selected">Bizning Tanlagan Universitetlar (100% Qaytarim Kafolati)</option>
+                  <option value="consultation">Avval maslahat kerak</option>
                 </select>
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Additional Information</label>
+                <label className="text-sm font-medium mb-2 block">Qo'shimcha Ma'lumot</label>
                 <Textarea 
-                  placeholder="Tell us about your academic background, extracurricular activities, and goals..."
+                  placeholder="Akademik tarixingiz, qo'shimcha mashg'ulotlar va maqsadlaringiz haqida bizga aytib bering..."
                   rows={5}
                 />
               </div>
@@ -71,9 +71,9 @@ const Contact = () => {
                 variant="hero" 
                 size="lg" 
                 className="w-full"
-                onClick={() => alert('Thank you for your application! We will contact you within 24 hours to schedule your consultation.')}
+                onClick={() => alert('Arizangiz uchun rahmat! Biz sizga maslahat vaqtini belgilash uchun 24 soat ichida aloqaga chiqamiz.')}
               >
-                Submit Application
+                Arizani Yuborish
               </Button>
             </CardContent>
           </Card>
@@ -87,13 +87,13 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Our Location</h3>
-                    <p className="text-muted-foreground">Tashkent, Uzbekistan</p>
+                    <h3 className="font-semibold">Bizning Joylashuvimiz</h3>
+                    <p className="text-muted-foreground">Toshkent, O'zbekiston</p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  UNLOCK UZBEKISTAN headquarters. We serve students nationwide who want to 
-                  apply to universities in the US, UK, Europe, and Asia.
+                  UNLOCK UZBEKISTAN bosh ofisi. Biz AQSh, Buyuk Britaniya, Yevropa va Osiyodagi 
+                  universitetlarga ariza berishni istagan butun mamlakat bo'ylab talabalarga xizmat ko'rsatamiz.
                 </p>
               </CardContent>
             </Card>
@@ -105,12 +105,12 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Phone</h3>
+                    <h3 className="font-semibold">Telefon</h3>
                     <p className="text-muted-foreground">+998 90 123 45 67</p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Call us to schedule your Accepted program consultation.
+                  Accepted dasturi maslahatingizni rejalashtirish uchun bizga qo'ng'iroq qiling.
                 </p>
               </CardContent>
             </Card>
@@ -127,7 +127,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Email us your application questions and we'll respond within 24 hours.
+                  Ariza savolaringizni bizga emailda yuboring va biz 24 soat ichida javob beramiz.
                 </p>
               </CardContent>
             </Card>
@@ -139,12 +139,12 @@ const Contact = () => {
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Office Hours</h3>
-                    <p className="text-muted-foreground">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                    <h3 className="font-semibold">Ish Vaqti</h3>
+                    <p className="text-muted-foreground">Dush - Jum: 9:00 - 18:00</p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  We're available for consultations and application support during business hours.
+                  Biz ish vaqtida maslahat va ariza yordami uchun mavjudmiz.
                 </p>
               </CardContent>
             </Card>
@@ -152,18 +152,18 @@ const Contact = () => {
             {/* CTA */}
             <div className="bg-gradient-primary rounded-xl p-6 text-center">
               <h3 className="text-xl font-bold text-primary-foreground mb-2">
-                Ready to Get Accepted?
+                Qabul Bo'lishga Tayyormisiz?
               </h3>
               <p className="text-primary-foreground/80 mb-4">
-                Applications starting August 1, 2025. Get priority access with early consultation.
+                2025-yil 1-avgustdan boshlab arizalar. Erta maslahat bilan ustuvor yo'lni oling.
               </p>
               <Button 
                 variant="secondary" 
                 size="lg" 
                 className="bg-white text-primary hover:bg-white/90"
-                onClick={() => alert('Thank you for your interest! We will contact you to schedule a priority consultation for the Accepted program.')}
+                onClick={() => alert('Qiziqishingiz uchun rahmat! Biz sizga Accepted dasturi uchun ustuvor maslahat rejalashtirish uchun aloqaga chiqamiz.')}
               >
-                Get Priority Access
+                Ustuvor Yo'lni Oling
               </Button>
             </div>
           </div>

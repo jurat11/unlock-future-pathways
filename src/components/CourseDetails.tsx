@@ -8,37 +8,37 @@ const CourseDetails = () => {
     {
       role: "Strategist",
       icon: User,
-      description: "Guides application strategy, builds college list, plans timelines, and helps with positioning and activities."
+      description: "Ariza strategiyasini boshqaradi, kollej ro'yxatini tuzadi, vaqt jadvalini rejalashtiradi, pozitsiya va faoliyatlar bilan yordam beradi."
     },
     {
-      role: "Essay Mentor", 
+      role: "Insho Mentori", 
       icon: FileText,
-      description: "Supports with brainstorming, drafting, and editing essays to make them clear, personal, and impactful."
+      description: "Insholarni aniq, shaxsiy va ta'sirli qilish uchun g'oyalarni ishlab chiqish, loyihalash va tahrirlashda yordam beradi."
     },
     {
-      role: "Assistant",
+      role: "Yordamchi",
       icon: Settings,
-      description: "Helps with application forms, financial documents, scheduling, reminders, and other technical tasks."
+      description: "Ariza shakllari, moliyaviy hujjatlar, jadvallashtirish, eslatmalar va boshqa texnik vazifalar bilan yordam beradi."
     }
   ];
 
   const checklistItems = [
-    "Firmly chosen and clearly justified career field or academic interest",
-    "Finalized list of 5 universities that match educational and personal needs",
-    "Selection of Early Action/Early Decision universities with clear timeline",
-    "Fine-tuning of existing and newly suggested EA applications",
-    "Fine-tuning of existing and newly suggested Honors Program applications",
-    "Finalized CV, resume, and cover letter",
-    "Creation of portfolio or personal website (if applicable)",
-    "Social media profile optimization (LinkedIn and/or Instagram)",
-    "Completed personal statement or motivational letter",
-    "Finalized recommendation letters (drafted or guided)",
-    "Completed supplemental essays for all target universities",
-    "All application portals (e.g., Common App) fully completed and reviewed",
-    "CSS Profile and other financial documents prepared and submitted",
-    "Interview preparation (if invited)",
-    "College-specific video submissions (if requested)",
-    "College-specific forms and documents (if requested)"
+    "Aniq tanlangan va asoslab berilgan karera sohasi yoki akademik qiziqish",
+    "Ta'lim va shaxsiy ehtiyojlarga mos keladigan 5 ta universitetning yakuniy ro'yxati",
+    "Aniq vaqt jadvali bilan Early Action/Early Decision universitetlarini tanlash",
+    "Mavjud va yangi taklif qilingan EA arizalarini yaxshilash",
+    "Mavjud va yangi taklif qilingan Faxriy dastur arizalarini yaxshilash",
+    "Yakunlashgan CV, rezyume va motivatsion xat",
+    "Portfolio yoki shaxsiy veb-sayt yaratish (agar tegishli bo'lsa)",
+    "Ijtimoiy media profil optimallashtirish (LinkedIn va/yoki Instagram)",
+    "To'ldirilgan shaxsiy bayonot yoki motivatsion xat",
+    "Yakunlashgan tavsiya xatlari (loyihalangan yoki yo'naltirilgan)",
+    "Barcha maqsadli universitetlar uchun to'ldirilgan qo'shimcha insholar",
+    "Barcha ariza portallari (masalan, Common App) to'liq to'ldirilgan va ko'rib chiqilgan",
+    "CSS profil va boshqa moliyaviy hujjatlar tayyorlangan va yuborilgan",
+    "Suhbatga tayyorgarlik (agar taklif qilingan bo'lsa)",
+    "Kollej-specifik video yuborishlar (agar so'ralgan bo'lsa)",
+    "Kollej-specifik shakllar va hujjatlar (agar so'ralgan bo'lsa)"
   ];
 
   return (
@@ -46,11 +46,11 @@ const CourseDetails = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-primary">Accepted</span> - Complete Admissions Package
+            <span className="text-primary">Accepted</span> - To'liq Qabul Paketi
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our most complete admissions program. Work with 3 experts from August 1 until final decisions. 
-            Choose our university selection for 100% refund guarantee.
+            Bizning eng to'liq qabul dasturimiz. 1-avgustdan yakuniy qarorgacha 3 ta mutaxassis bilan ishlang. 
+            100% qaytarim kafolati uchun bizning universitet tanlovimizni tanlang.
           </p>
         </div>
 
@@ -58,33 +58,33 @@ const CourseDetails = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           <Card className="border-2 border-primary/20">
             <CardHeader>
-              <Badge variant="outline" className="w-fit mb-2">Track 1</Badge>
+              <Badge variant="outline" className="w-fit mb-2">1-yo'nalish</Badge>
               <CardTitle className="flex items-center space-x-2">
                 <Star className="h-6 w-6 text-primary" />
-                <span>Student-Selected Universities</span>
+                <span>Talaba Tanlagan Universitetlar</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                You choose your own 5 target universities. We provide full support to maximize your chances.
+                Siz o'zingizning 5 ta maqsadli universitetingizni tanlaysiz. Biz imkoniyatlaringizni maksimal darajada oshirish uchun to'liq yordam beramiz.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">Complete application support</span>
+                  <span className="text-sm">To'liq ariza yordami</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">3 expert team members</span>
+                  <span className="text-sm">3 ta mutaxassis jamoa a'zosi</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">From Aug 1 to final decisions</span>
+                  <span className="text-sm">1-avgustdan yakuniy qarorgacha</span>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-muted rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Note:</strong> No refund guarantee for this track since university choices are yours.
+                  <strong>Eslatma:</strong> Bu yo'nalish uchun qaytarim kafolati yo'q, chunki universitet tanlovlari sizniki.
                 </p>
               </div>
             </CardContent>
@@ -92,33 +92,33 @@ const CourseDetails = () => {
 
           <Card className="border-2 border-success/20 bg-success/5">
             <CardHeader>
-              <Badge variant="secondary" className="w-fit mb-2 bg-success text-success-foreground">Track 2</Badge>
+              <Badge variant="secondary" className="w-fit mb-2 bg-success text-success-foreground">2-yo'nalish</Badge>
               <CardTitle className="flex items-center space-x-2">
                 <Shield className="h-6 w-6 text-success" />
-                <span>Our-Selected Universities</span>
+                <span>Bizning Tanlagan Universitetlar</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                We choose 5 universities based on your profile and financial needs. Full refund guarantee included.
+                Biz sizning profilingiz va moliyaviy ehtiyojlaringiz asosida 5 ta universitetni tanlaymiz. To'liq qaytarim kafolati kiritilgan.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">Complete application support</span>
+                  <span className="text-sm">To'liq ariza yordami</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">3 expert team members</span>
+                  <span className="text-sm">3 ta mutaxassis jamoa a'zosi</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">100% refund guarantee</span>
+                  <span className="text-sm">100% qaytarim kafolati</span>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-success/10 rounded-lg border border-success/20">
                 <p className="text-sm font-medium text-success">
-                  🛡️ 100% refund if no admission or required scholarship received
+                  🛡️ Agar qabul yoki kerakli stipendiya olinmasa 100% qaytarim
                 </p>
               </div>
             </CardContent>
@@ -127,7 +127,7 @@ const CourseDetails = () => {
 
         {/* Expert Team */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-center">Your Expert Team</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">Sizning Mutaxassis Jamoyangiz</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {teamMembers.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-elegant transition-shadow duration-300">
@@ -156,7 +156,7 @@ const CourseDetails = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  <span>Program Details</span>
+                  <span>Dastur Tafsilotlari</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -164,34 +164,34 @@ const CourseDetails = () => {
                   <div className="flex items-center space-x-3">
                     <Clock className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Duration</div>
-                      <div className="text-muted-foreground">Aug 1 - Final Decisions</div>
+                      <div className="font-semibold">Davomiyligi</div>
+                      <div className="text-muted-foreground">1-Avg - Yakuniy Qarorlar</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Users className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Team Size</div>
-                      <div className="text-muted-foreground">3 experts per student</div>
+                      <div className="font-semibold">Jamoa Hajmi</div>
+                      <div className="text-muted-foreground">Har talaba uchun 3 mutaxassis</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Calendar className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Universities</div>
-                      <div className="text-muted-foreground">5 target schools</div>
+                      <div className="font-semibold">Universitetlar</div>
+                      <div className="text-muted-foreground">5 ta maqsadli maktab</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Award className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Support Type</div>
-                      <div className="text-muted-foreground">Complete application</div>
+                      <div className="font-semibold">Yordam Turi</div>
+                      <div className="text-muted-foreground">To'liq ariza</div>
                     </div>
                   </div>
                 </div>
 
-                <h4 className="font-semibold mb-4">16-Item Student Checklist:</h4>
+                <h4 className="font-semibold mb-4">16 Bandli Talaba Chek-listi:</h4>
                 <div className="grid sm:grid-cols-1 gap-2 max-h-64 overflow-y-auto">
                   {checklistItems.map((item, index) => (
                     <div key={index} className="flex items-start space-x-2">
@@ -209,14 +209,14 @@ const CourseDetails = () => {
             <Card className="sticky top-24">
               <CardHeader className="text-center">
                 <Badge variant="secondary" className="w-fit mx-auto mb-2">
-                  Applications Open
+                  Arizalar Ochiq
                 </Badge>
-                <CardTitle className="text-2xl">Accepted Program</CardTitle>
+                <CardTitle className="text-2xl">Accepted Dasturi</CardTitle>
                 <div className="text-3xl font-bold text-primary">
-                  Contact
-                  <span className="text-lg text-muted-foreground block mt-1">for Pricing</span>
+                  Aloqa
+                  <span className="text-lg text-muted-foreground block mt-1">Narx uchun</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Customized based on your needs</p>
+                <p className="text-sm text-muted-foreground">Sizning ehtiyojlaringizga qarab moslashtirilgan</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button 
@@ -225,7 +225,7 @@ const CourseDetails = () => {
                   className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Apply Now
+                  Hoziroq Ariza Bering
                 </Button>
                 <Button 
                   variant="outline" 
@@ -233,11 +233,11 @@ const CourseDetails = () => {
                   className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Schedule Consultation
+                  Maslahat Vaqtini Belgilang
                 </Button>
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">
-                    🛡️ 100% refund guarantee available • Premium support
+                    🛡️ 100% qaytarim kafolati mavjud • Premium yordam
                   </p>
                 </div>
               </CardContent>
@@ -247,50 +247,50 @@ const CourseDetails = () => {
 
         {/* Refund Policy */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center">Refund Policy</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">Qaytarim Siyosati</h3>
           <Card className="bg-gradient-subtle border-success/20">
             <CardContent className="p-8">
               <div className="text-center mb-6">
                 <Shield className="h-12 w-12 text-success mx-auto mb-4" />
-                <h4 className="text-xl font-semibold mb-2">100% Refund Guarantee</h4>
+                <h4 className="text-xl font-semibold mb-2">100% Qaytarim Kafolati</h4>
                 <p className="text-muted-foreground">
-                  Available only for "Our-Selected Universities" track
+                  Faqat "Bizning Tanlagan Universitetlar" yo'nalishi uchun mavjud
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h5 className="font-semibold mb-3 text-success">Eligibility Requirements:</h5>
+                  <h5 className="font-semibold mb-3 text-success">Muvofiqlik Talablari:</h5>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Let our team choose 5 target universities</span>
+                      <span className="text-sm">Bizning jamoa 5 ta maqsadli universitetni tanlashiga ruxsat bering</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">No admission to any of the 5 selected universities</span>
+                      <span className="text-sm">Tanlangan 5 ta universitetning hech biriga qabul bo'lmaslik</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">OR no minimum scholarship amount received</span>
+                      <span className="text-sm">YOKI minimal stipendiya miqdori olinmasligi</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h5 className="font-semibold mb-3">To Qualify:</h5>
+                  <h5 className="font-semibold mb-3">Muvofiq Bo'lish Uchun:</h5>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Submit all required essays and documents on time</span>
+                      <span className="text-sm">Barcha kerakli insholar va hujjatlarni vaqtida topshiring</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Follow team feedback and instructions</span>
+                      <span className="text-sm">Jamoa fikr-mulohaza va ko'rsatmalariga amal qiling</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Complete the full program without withdrawing</span>
+                      <span className="text-sm">To'liq dasturni chiqib ketmasdan tugatish</span>
                     </li>
                   </ul>
                 </div>

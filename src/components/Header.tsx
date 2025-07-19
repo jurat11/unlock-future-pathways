@@ -21,16 +21,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              About
+              Biz Haqimizda
             </a>
             <a href="#accepted-program" className="text-foreground hover:text-primary transition-colors">
               Accepted
             </a>
             <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">
-              Testimonials
+              Fikrlar
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
+              Aloqa
             </a>
           </nav>
 
@@ -41,7 +41,7 @@ const Header = () => {
               size="sm"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Apply Now
+              Hoziroq Ariza Bering
             </Button>
           </div>
 
@@ -63,7 +63,7 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                Biz Haqimizda
               </a>
               <a 
                 href="#accepted-program" 
@@ -77,14 +77,14 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Testimonials
+                Fikrlar
               </a>
               <a 
                 href="#contact" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                Aloqa
               </a>
               <Button 
                 variant="hero" 
@@ -95,7 +95,7 @@ const Header = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Apply Now
+                Hoziroq Ariza Bering
               </Button>
             </nav>
           </div>

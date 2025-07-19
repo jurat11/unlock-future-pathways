@@ -5,23 +5,23 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: "Our Mission",
-      description: "Making international university admissions accessible to Uzbek students through expert guidance and proven strategies."
+      title: "Bizning Maqsadimiz",
+      description: "O'zbek talabalariga xalqaro universitet qabuli masalasida mutaxassis yo'l-yo'riq va isbotlangan strategiyalar orqali yordam berish."
     },
     {
       icon: Heart,
-      title: "Our Story",
-      description: "Started with podcasting successful Ivy League admits, now supporting students with comprehensive admissions services."
+      title: "Bizning Hikoyamiz",
+      description: "Ivy League universitetlariga muvaffaqiyatli qabul bo'lgan talabalar bilan podcast qilishdan boshlab, endi talabalarni to'liq qabul xizmatlari bilan qo'llab-quvvatlaymiz."
     },
     {
       icon: Users,
-      title: "Community Impact",
-      description: "Over 50,000 viewers trust our content. We've helped students get into University of Chicago, Duke, Carnegie Mellon Qatar, and NYU."
+      title: "Jamiyatga Ta'sir",
+      description: "50,000 dan ortiq ko'ruvchi bizning kontentimizga ishonadi. Biz talabalarga Chicago, Duke, Carnegie Mellon Qatar va NYU universitetlariga kirishda yordam berdik."
     },
     {
       icon: Lightbulb,
-      title: "Our Approach",
-      description: "Three experts per student: Strategist for planning, Essay Mentor for writing, and Assistant for technical support."
+      title: "Bizning Yondashuvimiz",
+      description: "Har bir talaba uchun uch mutaxassis: rejalashtirish uchun Strategist, yozish uchun Insho Mentori va texnik yordam uchun Yordamchi."
     }
   ];
 
@@ -30,11 +30,11 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="text-primary">UNLOCK UZBEKISTAN</span>
+            <span className="text-primary">UNLOCK UZBEKISTAN</span> Haqida
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Founded in 2022 in Tashkent, we started by podcasting successful early Uzbek admits to Ivy League schools. 
-            Now with 50,000+ viewers, we offer comprehensive admissions support through our "Accepted" program.
+            2022-yilda Toshkentda tashkil etilgan bo'lib, biz Ivy League maktablariga muvaffaqiyatli qabul bo'lgan o'zbek talabalar bilan podcast qilishdan boshladik. 
+            Endi 50,000+ ko'ruvchi bilan "Accepted" dasturimiz orqali to'liq qabul yordamini taklif etamiz.
           </p>
         </div>
 
@@ -60,31 +60,31 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Why Choose Accepted?
+                Nega Accepted ni Tanlash Kerak?
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Expert Team:</strong> Work with 3 specialists - Strategist, Essay Mentor, and Assistant for complete coverage.
+                    <strong className="text-foreground">Mutaxassis Jamoa:</strong> 3 ta mutaxassis bilan ishlang - Strategist, Insho Mentori va to'liq qamrov uchun Yordamchi.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Two-Track System:</strong> Choose your universities or trust our selection with 100% refund guarantee.
+                    <strong className="text-foreground">Ikki Yo'nalishli Tizim:</strong> Universitetlaringizni tanlang yoki 100% qaytarim kafolati bilan bizning tanlovimizga ishoning.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Complete Support:</strong> From August 1 until final decisions, covering all 16 checklist items.
+                    <strong className="text-foreground">To'liq Qo'llab-quvvatlash:</strong> 1-Avgustdan yakuniy qarorgacha, barcha 16 ta chek-list bandlarini qamrab oladi.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
-                    <strong className="text-foreground">Proven Success:</strong> Students accepted to top universities like UChicago, Duke, Carnegie Mellon Qatar.
+                    <strong className="text-foreground">Isbotlangan Muvaffaqiyat:</strong> Talabalar UChicago, Duke, Carnegie Mellon Qatar kabi top universitetlarga qabul bo'lishdi.
                   </p>
                 </div>
               </div>
@@ -93,11 +93,11 @@ const About = () => {
               <div className="bg-primary/5 rounded-xl p-8 border border-primary/20">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-                  <div className="text-muted-foreground mb-4">Podcast Viewers</div>
+                  <div className="text-muted-foreground mb-4">Podcast Ko'ruvchilari</div>
                   <div className="text-2xl font-bold text-foreground mb-2">1450</div>
-                  <div className="text-muted-foreground mb-4">Avg SAT Score</div>
+                  <div className="text-muted-foreground mb-4">O'rtacha SAT Bali</div>
                   <div className="text-2xl font-bold text-success mb-2">2022</div>
-                  <div className="text-muted-foreground">Founded in Tashkent</div>
+                  <div className="text-muted-foreground">Toshkentda Tashkil Etilgan</div>
                 </div>
               </div>
             </div>
