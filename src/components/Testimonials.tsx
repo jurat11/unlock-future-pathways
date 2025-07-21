@@ -1,54 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Aziza Karimova",
-      location: "Samarqand",
-      rating: 5,
-      text: "UNLOCK UZBEKISTAN hayotimni butunlay o'zgartirdi. Ularning Accepted dasturi tufayli men UChicago universitetiga qabul bo'ldim. Ustozlar ajoyib, yordam ham zo'r edi.",
-      achievement: "UChicago ga qabul"
-    },
-    {
-      name: "Bobur Rahimov",
-      location: "Buxoro",
-      rating: 5,
-      text: "Qishloqdan kelgan holda, hech qachon shahar talabalariga raqobat qila olaman deb o'ylamagan edim. UNLOCK menga kerakli bilim va ishonch berdi.",
-      achievement: "Kirish imtihonida top 5%"
-    },
-    {
-      name: "Malika O'zbekova",
-      location: "Farg'ona",
-      rating: 5,
-      text: "UNLOCKdagi jamoa yordami tengsiz. Dastur tugagandan keyin ham mentorlardan yo'l-yo'riq olamiz va boshqa talabalar bilan aloqada bo'lamiz.",
-      achievement: "To'liq stipendiya oldi"
-    },
-    {
-      name: "Jasur Toshev",
-      location: "Andijon",
-      rating: 5,
-      text: "Dastur mukammal tuzilgan. Har bir modul oldingi ustiga quriladi va oxirida o'zimni universitet arizalari uchun to'liq tayyor his qildim.",
-      achievement: "Bir nechta universitetga qabul"
-    },
-    {
-      name: "Nigora Sultonova",
-      location: "Namangan",
-      rating: 5,
-      text: "Eng yoqqan tomoni shaxsiy e'tibor edi. Guruhda bo'lishimizga qaramay, men o'zimga alohida ustozim bordek his qildim.",
-      achievement: "Xalqaro stipendiya"
-    },
-    {
-      name: "Otabek Mirzayev",
-      location: "Xorazm",
-      rating: 5,
-      text: "UNLOCK faqat imtihonlarga tayyorlamaydi - hayotga tayyorlaydi. Bu yerda o'rgangan ko'nikmalar universitentda har kuni yordam bermoqda.",
-      achievement: "Dekan ro'yxatidagi talaba"
-    }
-  ];
-
-  return (
-    <section id="testimonials" className="py-20 bg-background">
+  const testimonials = [{
+    name: "Aziza Karimova",
+    location: "Samarqand",
+    rating: 5,
+    text: "UNLOCK UZBEKISTAN hayotimni butunlay o'zgartirdi. Ularning Accepted dasturi tufayli men UChicago universitetiga qabul bo'ldim. Ustozlar ajoyib, yordam ham zo'r edi.",
+    achievement: "UChicago ga qabul"
+  }, {
+    name: "Bobur Rahimov",
+    location: "Buxoro",
+    rating: 5,
+    text: "Qishloqdan kelgan holda, hech qachon shahar talabalariga raqobat qila olaman deb o'ylamagan edim. UNLOCK menga kerakli bilim va ishonch berdi.",
+    achievement: "Kirish imtihonida top 5%"
+  }, {
+    name: "Malika O'zbekova",
+    location: "Farg'ona",
+    rating: 5,
+    text: "UNLOCKdagi jamoa yordami tengsiz. Dastur tugagandan keyin ham mentorlardan yo'l-yo'riq olamiz va boshqa talabalar bilan aloqada bo'lamiz.",
+    achievement: "To'liq stipendiya oldi"
+  }, {
+    name: "Jasur Toshev",
+    location: "Andijon",
+    rating: 5,
+    text: "Dastur mukammal tuzilgan. Har bir modul oldingi ustiga quriladi va oxirida o'zimni universitet arizalari uchun to'liq tayyor his qildim.",
+    achievement: "Bir nechta universitetga qabul"
+  }, {
+    name: "Nigora Sultonova",
+    location: "Namangan",
+    rating: 5,
+    text: "Eng yoqqan tomoni shaxsiy e'tibor edi. Guruhda bo'lishimizga qaramay, men o'zimga alohida ustozim bordek his qildim.",
+    achievement: "Xalqaro stipendiya"
+  }, {
+    name: "Otabek Mirzayev",
+    location: "Xorazm",
+    rating: 5,
+    text: "UNLOCK faqat imtihonlarga tayyorlamaydi - hayotga tayyorlaydi. Bu yerda o'rgangan ko'nikmalar universitentda har kuni yordam bermoqda.",
+    achievement: "Dekan ro'yxatidagi talaba"
+  }];
+  return <section id="testimonials" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -61,15 +51,12 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="relative hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+          {testimonials.map((testimonial, index) => <Card key={index} className="relative hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <Quote className="h-8 w-8 text-primary/30 absolute top-4 right-4" />
                   <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                 </div>
                 
@@ -91,37 +78,12 @@ const Testimonials = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Statistics */}
-        <div className="mt-16 bg-gradient-primary rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-8">
-            Bizning ta'sirimiz raqamlarda
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">95%</div>
-              <div className="text-primary-foreground/80">Muvaffaqiyat darajasi</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">500+</div>
-              <div className="text-primary-foreground/80">Bitiruvchi</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">50+</div>
-              <div className="text-primary-foreground/80">Universitet</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary-foreground">$2M+</div>
-              <div className="text-primary-foreground/80">Yutilgan stipendiya</div>
-            </div>
-          </div>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Testimonials;
