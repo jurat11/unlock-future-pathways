@@ -5,22 +5,22 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: "Bizning Maqsadimiz",
-      description: "O'zbek talabalariga xalqaro universitet qabuli masalasida mutaxassis yo'l-yo'riq va isbotlangan strategiyalar orqali yordam berish."
+      title: "Bizning maqsadimiz",
+      description: "O'zbek talabalariga xalqaro universitet qabuli masalasida mutaxassis yo'l-yo'riq va isbotlangan strategiyalar bilan yordam berish."
     },
     {
       icon: Heart,
-      title: "Bizning Hikoyamiz",
-      description: "Ivy League universitetlariga muvaffaqiyatli qabul bo'lgan talabalar bilan podcast qilishdan boshlab, endi talabalarni to'liq qabul xizmatlari bilan qo'llab-quvvatlaymiz."
+      title: "Bizning hikoyamiz",
+      description: "Ivy League universitetlariga kirgan talabalar bilan podcast qilishdan boshlab, endi talabalarni to'liq qabul xizmatlari bilan qo'llab-quvvatlaymiz."
     },
     {
       icon: Users,
-      title: "Jamiyatga Ta'sir",
+      title: "Jamiyatga ta'sir",
       description: "50,000 dan ortiq ko'ruvchi bizning kontentimizga ishonadi. Biz talabalarga Chicago, Duke, Carnegie Mellon Qatar va NYU universitetlariga kirishda yordam berdik."
     },
     {
       icon: Lightbulb,
-      title: "Bizning Yondashuvimiz",
+      title: "Bizning yondashuvimiz",
       description: "Har bir talaba uchun uch mutaxassis: rejalashtirish uchun Strategist, yozish uchun Insho Mentori va texnik yordam uchun Yordamchi."
     }
   ];
@@ -30,11 +30,11 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-primary">UNLOCK UZBEKISTAN</span> Haqida
+            <span className="text-primary">UNLOCK UZBEKISTAN</span> haqida
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            2022-yilda Toshkentda tashkil etilgan bo'lib, biz Ivy League maktablariga muvaffaqiyatli qabul bo'lgan o'zbek talabalar bilan podcast qilishdan boshladik. 
-            Endi 50,000+ ko'ruvchi bilan "Accepted" dasturimiz orqali to'liq qabul yordamini taklif etamiz.
+            2022-yilda Toshkentda tashkil etilgan. Biz Ivy League maktablariga kirgan o'zbek talabalar bilan podcast qilishdan boshladik. 
+            Endi 50,000+ ko'ruvchi bilan "Accepted" dasturi orqali to'liq qabul yordamini taklif qilamiz.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Nega Accepted ni Tanlash Kerak?
+                Nega Accepted ni tanlash kerak?
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">

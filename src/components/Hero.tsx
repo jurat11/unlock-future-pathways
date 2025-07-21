@@ -12,13 +12,13 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Orzuingizdagi
+                Orzuingdagi
                 <span className="text-primary block">Universitetga</span>
-                Qabul Bo'ling
+                Kir!
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                UNLOCK UZBEKISTAN ning eng to'liq qabul paketini oling. 3 ta mutaxassis bilan ishlang: 
-                Strategist, Insho Mentori va Yordamchi. Bizning universitet tanlovimizni tanlang va 100% qaytarim kafolatini oling.
+                UNLOCK UZBEKISTAN ning eng to'liq qabul paketini ol. 3 ta mutaxassis bilan ishla: 
+                Strategist, Insho Mentori va Yordamchi. Bizning universitet tanlovimizni tanla yoki 100% pul qaytarim kafolatini ol.
               </p>
             </div>
 
@@ -30,11 +30,11 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">100% Qaytarim Kafolati*</span>
+                <span className="text-foreground font-medium">100% Pul Qaytarim Kafolati*</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">To'liq Ariza Yordami</span>
+                <span className="text-foreground font-medium">To'liq ariza yordami</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
@@ -50,7 +50,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => document.getElementById('accepted-program')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Accepted ga Ariza Bering
+                Accepted ga ariza ber
               </Button>
               <Button 
                 variant="outline" 
@@ -58,7 +58,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Maslahat Vaqtini Belgilang
+                Maslahat vaqti belgilay
               </Button>
             </div>
 

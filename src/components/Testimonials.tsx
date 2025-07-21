@@ -5,45 +5,45 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Aziza Karimova",
-      location: "Samarkand",
+      location: "Samarqand",
       rating: 5,
-      text: "Unlock changed my life completely. Thanks to their premium course, I got accepted to Tashkent State University. The instructors were amazing and the support was incredible.",
-      achievement: "Accepted to TSU"
+      text: "UNLOCK UZBEKISTAN hayotimni butunlay o'zgartirdi. Ularning Accepted dasturi tufayli men UChicago universitetiga qabul bo'ldim. Ustozlar ajoyib, yordam ham zo'r edi.",
+      achievement: "UChicago ga qabul"
     },
     {
       name: "Bobur Rahimov",
-      location: "Bukhara",
+      location: "Buxoro",
       rating: 5,
-      text: "Coming from a rural area, I never thought I could compete with city students. Unlock gave me the confidence and knowledge I needed to succeed in my entrance exams.",
-      achievement: "Top 5% in entrance exam"
+      text: "Qishloqdan kelgan holda, hech qachon shahar talabalariga raqobat qila olaman deb o'ylamagan edim. UNLOCK menga kerakli bilim va ishonch berdi.",
+      achievement: "Kirish imtihonida top 5%"
     },
     {
-      name: "Malika Uzbekova",
-      location: "Fergana",
+      name: "Malika O'zbekova",
+      location: "Farg'ona",
       rating: 5,
-      text: "The community support at Unlock is unmatched. Even after completing the course, I still get guidance from mentors and connect with fellow students.",
-      achievement: "Full scholarship recipient"
+      text: "UNLOCKdagi jamoa yordami tengsiz. Dastur tugagandan keyin ham mentorlardan yo'l-yo'riq olamiz va boshqa talabalar bilan aloqada bo'lamiz.",
+      achievement: "To'liq stipendiya oldi"
     },
     {
       name: "Jasur Toshev",
-      location: "Andijan",
+      location: "Andijon",
       rating: 5,
-      text: "The curriculum is perfectly designed. Every module built upon the previous one, and by the end, I felt completely prepared for my university applications.",
-      achievement: "Multiple university acceptances"
+      text: "Dastur mukammal tuzilgan. Har bir modul oldingi ustiga quriladi va oxirida o'zimni universitet arizalari uchun to'liq tayyor his qildim.",
+      achievement: "Bir nechta universitetga qabul"
     },
     {
-      name: "Nigora Sultanova",
+      name: "Nigora Sultonova",
       location: "Namangan",
       rating: 5,
-      text: "What I loved most was the personalized attention. Despite being in a group, I felt like I had my own personal tutor guiding me every step of the way.",
-      achievement: "International scholarship"
+      text: "Eng yoqqan tomoni shaxsiy e'tibor edi. Guruhda bo'lishimizga qaramay, men o'zimga alohida ustozim bordek his qildim.",
+      achievement: "Xalqaro stipendiya"
     },
     {
-      name: "Otabek Mirzaev",
-      location: "Khorezm",
+      name: "Otabek Mirzayev",
+      location: "Xorazm",
       rating: 5,
-      text: "Unlock doesn't just prepare you for exams - they prepare you for life. The skills I learned here help me every day in my university studies.",
-      achievement: "Dean's list student"
+      text: "UNLOCK faqat imtihonlarga tayyorlamaydi - hayotga tayyorlaydi. Bu yerda o'rgangan ko'nikmalar universitentda har kuni yordam bermoqda.",
+      achievement: "Dekan ro'yxatidagi talaba"
     }
   ];
 
@@ -52,11 +52,11 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Success <span className="text-primary">Stories</span>
+            Muvaffaqiyat <span className="text-primary">hikoyalari</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Hear from our students who have transformed their educational journey 
-            and achieved their dreams through our premium course.
+            Bizning Accepted dasturi orqali ta'lim yo'llarini o'zgartirib, orzulariga erishgan 
+            talabalarimizning hikoyalarini eshiting.
           </p>
         </div>
 
@@ -98,24 +98,24 @@ const Testimonials = () => {
         {/* Statistics */}
         <div className="mt-16 bg-gradient-primary rounded-2xl p-8 md:p-12 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-8">
-            Our Impact in Numbers
+            Bizning ta'sirimiz raqamlarda
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="text-3xl md:text-4xl font-bold text-primary-foreground">95%</div>
-              <div className="text-primary-foreground/80">Success Rate</div>
+              <div className="text-primary-foreground/80">Muvaffaqiyat darajasi</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-primary-foreground">500+</div>
-              <div className="text-primary-foreground/80">Graduates</div>
+              <div className="text-primary-foreground/80">Bitiruvchi</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-primary-foreground">50+</div>
-              <div className="text-primary-foreground/80">Universities</div>
+              <div className="text-primary-foreground/80">Universitet</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-primary-foreground">$2M+</div>
-              <div className="text-primary-foreground/80">Scholarships Won</div>
+              <div className="text-primary-foreground/80">Yutilgan stipendiya</div>
             </div>
           </div>
         </div>

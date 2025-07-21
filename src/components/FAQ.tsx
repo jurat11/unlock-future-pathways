@@ -8,36 +8,36 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "Who is eligible for the premium admission course?",
-      answer: "Our course is open to all students who are serious about pursuing higher education. Whether you're from rural or urban areas, our program is designed to help you succeed regardless of your background."
+      question: "Kimlar Accepted dasturiga kirishi mumkin?",
+      answer: "Bizning dastur oliy ta'limni jiddiy ko'radigan barcha talabalarga ochiq. Qishloq yoki shahardan bo'lishingizdan qat'iy nazar, dasturimiz har qanday fonda muvaffaqiyat qozonishingizga yordam beradi."
     },
     {
-      question: "What makes this course different from free resources?",
-      answer: "While we believe in free education, our premium course offers personalized mentorship, live interactive sessions, comprehensive study materials, mock tests, and one-on-one guidance that you won't find in free resources."
+      question: "Bu dastur bepul manbalardan nimasi bilan farq qiladi?",
+      answer: "Biz bepul ta'limga ishonamiz, lekin Accepted dasturi shaxsiy mentorlik, jonli interaktiv sessiyalar, to'liq o'quv materiallari, test sinovlari va bepul manbalarda topilmaydigan individual yo'l-yo'riqni taklif qiladi."
     },
     {
-      question: "How long does the course take to complete?",
-      answer: "The complete program is 16 weeks long, with 3 sessions per week. Each session is designed to build upon the previous one, ensuring comprehensive preparation for your admission goals."
+      question: "Dasturni tugatish uchun qancha vaqt kerak?",
+      answer: "To'liq dastur 16 hafta davom etadi, haftada 3 ta sessiya bilan. Har bir sessiya oldingi ustiga quriladi va qabul maqsadlaringiz uchun to'liq tayyorgarlikni ta'minlaydi."
     },
     {
-      question: "Do you offer payment plans or scholarships?",
-      answer: "Yes! We offer flexible payment plans and need-based scholarships for students who demonstrate financial need. Our goal is to make quality education accessible to everyone."
+      question: "To'lov rejalari yoki stipendiyalar bormi?",
+      answer: "Ha! Biz moslashuvchan to'lov rejalarini va moliyaviy ehtiyojini ko'rsatgan talabalar uchun ehtiyojga asoslangan stipendiyalarni taklif qilamiz. Maqsadimiz sifatli ta'limni hammaga ochiq qilish."
     },
     {
-      question: "What if I'm not satisfied with the course?",
-      answer: "We offer a 30-day money-back guarantee. If you're not completely satisfied with the course within the first 30 days, we'll provide a full refund, no questions asked."
+      question: "Agar dasturdan norozi bo'lsam nima bo'ladi?",
+      answer: "Biz 30 kunlik pul qaytarish kafolatini taklif qilamiz. Agar dastlabki 30 kun ichida dasturdan to'liq norozi bo'lsangiz, hech qanday savol berilmagan holda to'liq qaytarib beramiz."
     },
     {
-      question: "Will I get ongoing support after course completion?",
-      answer: "Absolutely! You'll have lifetime access to our alumni network, course materials, and can schedule follow-up mentorship sessions. We're committed to your long-term success."
+      question: "Dastur tugagandan keyin ham yordam olaman?",
+      answer: "Albatta! Sizda bizning bitiruvchilar tarmog'iga, kurs materiallariga umrbod kirish huquqi bo'ladi va qo'shimcha mentorlik sessiyalarini belgilashingiz mumkin. Biz sizning uzoq muddatli muvaffaqiyatingizga sodiqmiz."
     },
     {
-      question: "How do the live sessions work?",
-      answer: "Live sessions are conducted online through our learning platform. They're interactive, allowing you to ask questions in real-time. All sessions are recorded, so you can review them later."
+      question: "Jonli sessiyalar qanday ishlaydi?",
+      answer: "Jonli sessiyalar bizning ta'lim platformamiz orqali onlayn o'tkaziladi. Ular interaktiv bo'lib, real vaqtda savol berishingizga imkon beradi. Barcha sessiyalar yozib olinadi, shuning uchun keyinroq ko'rib chiqishingiz mumkin."
     },
     {
-      question: "What technology do I need for the course?",
-      answer: "You'll need a computer or tablet with internet access. Our platform works on all modern browsers, and we provide technical support to ensure you can participate fully."
+      question: "Dastur uchun qanday texnologiya kerak?",
+      answer: "Sizga internet ulanishi bo'lgan kompyuter yoki planshet kerak bo'ladi. Bizning platformamiz barcha zamonaviy brauzerlarda ishlaydi va to'liq ishtirok etishingizni ta'minlash uchun texnik yordam berамiz."
     }
   ];
 
@@ -46,10 +46,10 @@ const FAQ = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked <span className="text-primary">Questions</span>
+            Ko'p <span className="text-primary">berilgan savollar</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get answers to the most common questions about our premium admission course.
+            Bizning Accepted dasturi haqida eng ko'p soraladigan savollarga javoblar.
           </p>
         </div>
 

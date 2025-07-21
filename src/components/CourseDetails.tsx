@@ -46,11 +46,11 @@ const CourseDetails = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-primary">Accepted</span> - To'liq Qabul Paketi
+            <span className="text-primary">Accepted</span> - to'liq qabul paketi
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Bizning eng to'liq qabul dasturimiz. 1-avgustdan yakuniy qarorgacha 3 ta mutaxassis bilan ishlang. 
-            100% qaytarim kafolati uchun bizning universitet tanlovimizni tanlang.
+            Bizning eng to'liq qabul dasturimiz. 1-avgustdan yakuniy qarorgacha 3 ta mutaxassis bilan ishla. 
+            100% pul qaytarim kafolati uchun bizning universitet tanlovimizni tanla.
           </p>
         </div>
 
@@ -61,12 +61,12 @@ const CourseDetails = () => {
               <Badge variant="outline" className="w-fit mb-2">1-yo'nalish</Badge>
               <CardTitle className="flex items-center space-x-2">
                 <Star className="h-6 w-6 text-primary" />
-                <span>Talaba Tanlagan Universitetlar</span>
+                <span>O'zim tanlagan universitetlar</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Siz o'zingizning 5 ta maqsadli universitetingizni tanlaysiz. Biz imkoniyatlaringizni maksimal darajada oshirish uchun to'liq yordam beramiz.
+                Sen o'zingning 5 ta maqsadli universitetingni tanlaysan. Biz imkoniyatlaringni maksimal darajada oshirish uchun to'liq yordam beramiz.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
@@ -84,7 +84,7 @@ const CourseDetails = () => {
               </div>
               <div className="mt-4 p-3 bg-muted rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Eslatma:</strong> Bu yo'nalish uchun qaytarim kafolati yo'q, chunki universitet tanlovlari sizniki.
+                  <strong>Eslatma:</strong> Bu yo'nalish uchun pul qaytarim kafolati yo'q, chunki universitet tanlovlari seniki.
                 </p>
               </div>
             </CardContent>
@@ -95,12 +95,12 @@ const CourseDetails = () => {
               <Badge variant="secondary" className="w-fit mb-2 bg-success text-success-foreground">2-yo'nalish</Badge>
               <CardTitle className="flex items-center space-x-2">
                 <Shield className="h-6 w-6 text-success" />
-                <span>Bizning Tanlagan Universitetlar</span>
+                <span>Bizning tanlagan universitetlar</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Biz sizning profilingiz va moliyaviy ehtiyojlaringiz asosida 5 ta universitetni tanlaymiz. To'liq qaytarim kafolati kiritilgan.
+                Biz sening profiling va moliyaviy ehtiyojlaring asosida 5 ta universitetni tanlaymiz. To'liq pul qaytarim kafolati kiritilgan.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
@@ -113,12 +113,12 @@ const CourseDetails = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm">100% qaytarim kafolati</span>
+                  <span className="text-sm">100% pul qaytarim kafolati</span>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-success/10 rounded-lg border border-success/20">
                 <p className="text-sm font-medium text-success">
-                  🛡️ Agar qabul yoki kerakli stipendiya olinmasa 100% qaytarim
+                  🛡️ Agar qabul yoki kerakli stipendiya olinmasa 100% pul qaytarim
                 </p>
               </div>
             </CardContent>
@@ -127,7 +127,7 @@ const CourseDetails = () => {
 
         {/* Expert Team */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-center">Sizning Mutaxassis Jamoyangiz</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">Sening mutaxassis jamoyaing</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {teamMembers.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-elegant transition-shadow duration-300">
@@ -156,7 +156,7 @@ const CourseDetails = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  <span>Dastur Tafsilotlari</span>
+                  <span>Dastur tafsilotlari</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -165,13 +165,13 @@ const CourseDetails = () => {
                     <Clock className="h-5 w-5 text-primary" />
                     <div>
                       <div className="font-semibold">Davomiyligi</div>
-                      <div className="text-muted-foreground">1-Avg - Yakuniy Qarorlar</div>
+                      <div className="text-muted-foreground">1-avg - yakuniy qarorlar</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Users className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Jamoa Hajmi</div>
+                      <div className="font-semibold">Jamoa hajmi</div>
                       <div className="text-muted-foreground">Har talaba uchun 3 mutaxassis</div>
                     </div>
                   </div>
@@ -185,13 +185,13 @@ const CourseDetails = () => {
                   <div className="flex items-center space-x-3">
                     <Award className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold">Yordam Turi</div>
+                      <div className="font-semibold">Yordam turi</div>
                       <div className="text-muted-foreground">To'liq ariza</div>
                     </div>
                   </div>
                 </div>
 
-                <h4 className="font-semibold mb-4">16 Bandli Talaba Chek-listi:</h4>
+                <h4 className="font-semibold mb-4">16 bandli talaba chek-listi:</h4>
                 <div className="grid sm:grid-cols-1 gap-2 max-h-64 overflow-y-auto">
                   {checklistItems.map((item, index) => (
                     <div key={index} className="flex items-start space-x-2">
@@ -211,12 +211,12 @@ const CourseDetails = () => {
                 <Badge variant="secondary" className="w-fit mx-auto mb-2">
                   Arizalar Ochiq
                 </Badge>
-                <CardTitle className="text-2xl">Accepted Dasturi</CardTitle>
+                <CardTitle className="text-2xl">Accepted dasturi</CardTitle>
                 <div className="text-3xl font-bold text-primary">
                   Aloqa
                   <span className="text-lg text-muted-foreground block mt-1">Narx uchun</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Sizning ehtiyojlaringizga qarab moslashtirilgan</p>
+                <p className="text-sm text-muted-foreground">Sening ehtiyojlaringga qarab moslashtirilgan</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button 
@@ -225,7 +225,7 @@ const CourseDetails = () => {
                   className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Hoziroq Ariza Bering
+                  Hoziroq ariza ber
                 </Button>
                 <Button 
                   variant="outline" 
@@ -233,11 +233,11 @@ const CourseDetails = () => {
                   className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Maslahat Vaqtini Belgilang
+                  Maslahat vaqti belgilay
                 </Button>
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">
-                    🛡️ 100% qaytarim kafolati mavjud • Premium yordam
+                    🛡️ 100% pul qaytarim kafolati mavjud • Premium yordam
                   </p>
                 </div>
               </CardContent>
@@ -247,20 +247,20 @@ const CourseDetails = () => {
 
         {/* Refund Policy */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center">Qaytarim Siyosati</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">Pul qaytarim siyosati</h3>
           <Card className="bg-gradient-subtle border-success/20">
             <CardContent className="p-8">
               <div className="text-center mb-6">
                 <Shield className="h-12 w-12 text-success mx-auto mb-4" />
-                <h4 className="text-xl font-semibold mb-2">100% Qaytarim Kafolati</h4>
+                <h4 className="text-xl font-semibold mb-2">100% pul qaytarim kafolati</h4>
                 <p className="text-muted-foreground">
-                  Faqat "Bizning Tanlagan Universitetlar" yo'nalishi uchun mavjud
+                  Faqat "Bizning tanlagan universitetlar" yo'nalishi uchun mavjud
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h5 className="font-semibold mb-3 text-success">Muvofiqlik Talablari:</h5>
+                  <h5 className="font-semibold mb-3 text-success">Muvofiqlik talablari:</h5>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
@@ -278,7 +278,7 @@ const CourseDetails = () => {
                 </div>
                 
                 <div>
-                  <h5 className="font-semibold mb-3">Muvofiq Bo'lish Uchun:</h5>
+                  <h5 className="font-semibold mb-3">Muvofiq bo'lish uchun:</h5>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
