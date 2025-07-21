@@ -11,7 +11,7 @@ const CourseDetails = () => {
       description: "Ariza strategiyasini boshqaradi, kollej ro'yxatini tuzadi, vaqt jadvalini rejalashtiradi, pozitsiya va faoliyatlar bilan yordam beradi."
     },
     {
-      role: "Insho Mentori", 
+      role: "Essay mentor", 
       icon: FileText,
       description: "Insholarni aniq, shaxsiy va ta'sirli qilish uchun g'oyalarni ishlab chiqish, loyihalash va tahrirlashda yordam beradi."
     },
