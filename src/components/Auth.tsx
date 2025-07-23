@@ -1,19 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from "lucide-react";
-import { User, Session } from '@supabase/supabase-js';
+import bcrypt from 'bcryptjs';
 
 interface AuthProps {
-  onAuthSuccess: (user: User, session: Session) => void;
+  onAuthSuccess: (adminData: any) => void;
 }
-
-// Hardcoded admin credentials
-const ADMIN_EMAIL = "admin@example.com";
-const ADMIN_PASSWORD = "admin123";
 
 const Auth = ({ onAuthSuccess }: AuthProps) => {
   const [email, setEmail] = useState("");
@@ -21,29 +17,6 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { toast } = useToast();
-
-  useEffect(() => {
-    // Check for existing session
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session?.user) {
-        onAuthSuccess(session.user, session);
-      }
-    };
-    
-    checkSession();
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (session?.user) {
-          onAuthSuccess(session.user, session);
-        }
-      }
-    );
-
-    return () => subscription.unsubscribe();
-  }, [onAuthSuccess]);
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,50 +30,53 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
       return;
     }
 
-    // Check hardcoded credentials
-    if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
-      toast({
-        title: "Error",
-        description: "Invalid admin credentials.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setLoading(true);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password
+      // Query the admins table
+      const { data: adminData, error } = await supabase
+        .from('admins')
+        .select('*')
+        .eq('email', email.toLowerCase())
+        .single();
+
+      if (error || !adminData) {
+        toast({
+          title: "Error",
+          description: "Invalid email or password.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      // Verify password
+      const isPasswordValid = await bcrypt.compare(password, adminData.password_hash);
+      
+      if (!isPasswordValid) {
+        toast({
+          title: "Error",
+          description: "Invalid email or password.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      // Store admin session in localStorage
+      const adminSession = {
+        id: adminData.id,
+        email: adminData.email,
+        authenticated: true,
+        loginTime: new Date().getTime()
+      };
+      
+      localStorage.setItem('adminSession', JSON.stringify(adminSession));
+
+      toast({
+        title: "Login successful!",
+        description: "Welcome to admin dashboard."
       });
 
-      if (error) {
-        // If user doesn't exist, create them
-        if (error.message.includes("Invalid login credentials")) {
-          const { error: signUpError } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-              emailRedirectTo: `${window.location.origin}/admin`
-            }
-          });
-          
-          if (signUpError) throw signUpError;
-          
-          toast({
-            title: "Admin account created",
-            description: "Please check your email to confirm your account."
-          });
-        } else {
-          throw error;
-        }
-      } else {
-        toast({
-          title: "Login successful!",
-          description: "Welcome to admin dashboard."
-        });
-      }
+      onAuthSuccess(adminSession);
     } catch (error: any) {
       toast({
         title: "Error",
@@ -119,9 +95,9 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
           <CardTitle className="text-2xl">Admin Login</CardTitle>
           <p className="text-muted-foreground">Access the admin dashboard</p>
           <div className="mt-4 p-4 bg-muted rounded-lg text-sm">
-            <p className="font-medium mb-2">Admin Credentials:</p>
-            <p><strong>Email:</strong> {ADMIN_EMAIL}</p>
-            <p><strong>Password:</strong> {ADMIN_PASSWORD}</p>
+            <p className="font-medium mb-2">Default Admin Credentials:</p>
+            <p><strong>Email:</strong> admin@example.com</p>
+            <p><strong>Password:</strong> admin123</p>
           </div>
         </CardHeader>
         <CardContent>

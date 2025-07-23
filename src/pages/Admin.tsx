@@ -7,7 +7,6 @@ import { ArrowLeft, Mail, Phone, GraduationCap, DollarSign, MessageSquare, LogOu
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import Auth from "@/components/Auth";
-import { User, Session } from '@supabase/supabase-js';
 
 interface ContactSubmission {
   id: string;
@@ -23,66 +22,67 @@ interface ContactSubmission {
   created_at: string;
 }
 
+interface AdminSession {
+  id: string;
+  email: string;
+  authenticated: boolean;
+  loginTime: number;
+}
+
 const Admin = () => {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedSubmission, setSelectedSubmission] = useState<ContactSubmission | null>(null);
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
+  const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleAuthSuccess = (authenticatedUser: User, userSession: Session) => {
-    setUser(authenticatedUser);
-    setSession(userSession);
+  const handleAuthSuccess = (session: AdminSession) => {
+    setAdminSession(session);
     fetchSubmissions();
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-    setSession(null);
+  const handleLogout = () => {
+    localStorage.removeItem('adminSession');
+    setAdminSession(null);
     toast({
-      title: "Chiqish",
-      description: "Tizimdan muvaffaqiyatli chiqdingiz."
+      title: "Logged out",
+      description: "You have been logged out successfully."
     });
   };
 
   useEffect(() => {
-    // Check for existing session on component mount
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session?.user) {
-        setUser(session.user);
-        setSession(session);
-        fetchSubmissions();
+    // Check for existing admin session
+    const checkAdminSession = () => {
+      const storedSession = localStorage.getItem('adminSession');
+      if (storedSession) {
+        try {
+          const parsedSession = JSON.parse(storedSession);
+          // Check if session is less than 24 hours old
+          const sessionAge = new Date().getTime() - parsedSession.loginTime;
+          const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+          
+          if (sessionAge < maxAge && parsedSession.authenticated) {
+            setAdminSession(parsedSession);
+            fetchSubmissions();
+          } else {
+            localStorage.removeItem('adminSession');
+            setLoading(false);
+          }
+        } catch (error) {
+          localStorage.removeItem('adminSession');
+          setLoading(false);
+        }
       } else {
         setLoading(false);
       }
     };
-    
-    checkSession();
 
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (session?.user) {
-          setUser(session.user);
-          setSession(session);
-          fetchSubmissions();
-        } else {
-          setUser(null);
-          setSession(null);
-          setLoading(false);
-        }
-      }
-    );
-
-    return () => subscription.unsubscribe();
+    checkAdminSession();
   }, []);
 
-  // Show auth component if user is not logged in
-  if (!user || !session) {
+  // Show auth component if admin is not logged in
+  if (!adminSession) {
     return <Auth onAuthSuccess={handleAuthSuccess} />;
   }
 
@@ -97,8 +97,8 @@ const Admin = () => {
       setSubmissions(data || []);
     } catch (error) {
       toast({
-        title: "Xatolik",
-        description: "Ma'lumotlarni yuklashda xatolik yuz berdi.",
+        title: "Error",
+        description: "Failed to load submissions.",
         variant: "destructive"
       });
     } finally {
@@ -107,7 +107,7 @@ const Admin = () => {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('uz-UZ', {
+    return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -127,9 +127,9 @@ const Admin = () => {
               className="mb-4"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Orqaga qaytish
+              Back
             </Button>
-            <h1 className="text-3xl font-bold">Ariza tafsilotlari</h1>
+            <h1 className="text-3xl font-bold">Submission Details</h1>
           </div>
 
           <Card className="max-w-4xl">
@@ -138,7 +138,7 @@ const Admin = () => {
                 {selectedSubmission.first_name} {selectedSubmission.last_name}
               </CardTitle>
               <p className="text-muted-foreground">
-                Yuborilgan: {formatDate(selectedSubmission.created_at)}
+                Submitted: {formatDate(selectedSubmission.created_at)}
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -155,7 +155,7 @@ const Admin = () => {
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="font-medium">Telefon</p>
+                      <p className="font-medium">Phone</p>
                       <p className="text-muted-foreground">{selectedSubmission.phone}</p>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ const Admin = () => {
                   <div className="flex items-center space-x-3">
                     <GraduationCap className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="font-medium">Qiziqish sohasi</p>
+                      <p className="font-medium">Major Interest</p>
                       <p className="text-muted-foreground">{selectedSubmission.major_interest}</p>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ const Admin = () => {
                   <div className="flex items-center space-x-3">
                     <GraduationCap className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="font-medium">Ta'lim holati</p>
+                      <p className="font-medium">Education Status</p>
                       <p className="text-muted-foreground">{selectedSubmission.education_status}</p>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ const Admin = () => {
                   <div className="flex items-center space-x-3">
                     <DollarSign className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="font-medium">Yillik hissa</p>
+                      <p className="font-medium">Annual Contribution</p>
                       <p className="text-muted-foreground">{selectedSubmission.annual_contribution}</p>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ const Admin = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <p className="font-medium mb-2">Universitetlar ro'yxati</p>
+                    <p className="font-medium mb-2">Universities List</p>
                     <div className="bg-muted p-4 rounded-lg">
                       <p className="text-sm whitespace-pre-wrap">{selectedSubmission.universities}</p>
                     </div>
@@ -197,7 +197,7 @@ const Admin = () => {
                     <div>
                       <div className="flex items-center space-x-2 mb-2">
                         <MessageSquare className="h-5 w-5 text-primary" />
-                        <p className="font-medium">Qo'shimcha izoh</p>
+                        <p className="font-medium">Additional Comment</p>
                       </div>
                       <div className="bg-muted p-4 rounded-lg">
                         <p className="text-sm whitespace-pre-wrap">{selectedSubmission.additional_comment}</p>
@@ -219,7 +219,7 @@ const Admin = () => {
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-            <p className="text-muted-foreground">View all form submissions</p>
+            <p className="text-muted-foreground">Welcome, {adminSession.email}</p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" onClick={() => navigate('/')}>
