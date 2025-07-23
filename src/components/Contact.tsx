@@ -27,43 +27,45 @@ const Contact = () => {
             <CardContent className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Ism</label>
-                  <Input placeholder="Isming" />
+                  <label className="text-sm font-medium mb-2 block">Name</label>
+                  <Input placeholder="Your first name" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Familiya</label>
-                  <Input placeholder="Familiyaing" />
+                  <label className="text-sm font-medium mb-2 block">Surname</label>
+                  <Input placeholder="Your last name" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input type="email" placeholder="sening.email@example.com" />
+                <Input type="email" placeholder="your.email@example.com" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Telefon raqam</label>
+                <label className="text-sm font-medium mb-2 block">Phone Number</label>
                 <Input type="tel" placeholder="+998 90 123 45 67" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Qaysi sohaga qiziqisan</label>
-                <Input placeholder="masalan, Kompyuter Fanlari, Tibbiyot, Biznes" />
+                <label className="text-sm font-medium mb-2 block">Major or Areas Interested</label>
+                <Input placeholder="e.g., Computer Science, Medicine, Business" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Hozirgi holating</label>
-                <Input placeholder="masalan, 11-sinf, Maktab bitiruvchisi, Universitet o'tkazma" />
+                <label className="text-sm font-medium mb-2 block">Current Education Status</label>
+                <Input placeholder="e.g., Grade 11, High School Graduate, University Transfer" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 block">Qaysi yo'nalishni afzal ko'rasan</label>
-                <select className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                  <option value="">Yo'nalishni tanla</option>
-                  <option value="student-selected">O'zim tanlagan universitetlar (kafolatsiz)</option>
-                  <option value="our-selected">Bizning tanlagan universitetlar (100% pul qaytarim kafolati)</option>
-                  <option value="consultation">Avval maslahat kerak</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-sm font-medium mb-2 block">Qo'shimcha ma'lumot</label>
+                <label className="text-sm font-medium mb-2 block">List 5 Universities You Wanna Get In</label>
                 <Textarea 
-                  placeholder="Akademik tarihing, qo'shimcha mashg'ulotlar va maqsadlaring haqida bizga ayting..."
+                  placeholder="Please list your top 5 university choices..."
+                  rows={4}
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-2 block">Annual Contribution Towards Uni</label>
+                <Input placeholder="e.g., $50,000, Full scholarship needed, etc." />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-2 block">Additional Comment</label>
+                <Textarea 
+                  placeholder="Tell us about your academic background, extracurricular activities, and goals..."
                   rows={5}
                 />
               </div>
