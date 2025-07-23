@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Users, BookOpen, Award } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-education.jpg";
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return <section className="relative min-h-screen flex items-center bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -10,13 +13,11 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Orzuingdagi
-                <span className="text-primary block">Universitetga</span>
-                Kir!
+                {t('hero.title')}
+                <span className="text-primary block">{t('hero.title.accepted')}</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                UNLOCK UZBEKISTAN ning eng to'liq qabul paketini ol. 3 ta mutaxassis bilan ishla: 
-                Strategist, Insho Mentori va Yordamchi. Bizning universitet tanlovimizni tanla yoki 100% pul qaytarim kafolatini ol.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -24,19 +25,19 @@ const Hero = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">Har bir talaba uchun 3 ta mutaxassis</span>
+                <span className="text-foreground font-medium">{t('hero.feature1')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">100% Pul Qaytarim Kafolati*</span>
+                <span className="text-foreground font-medium">{t('hero.feature2')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">To'liq ariza yordami</span>
+                <span className="text-foreground font-medium">{t('hero.feature3')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="text-success h-5 w-5" />
-                <span className="text-foreground font-medium">1-Avgustdan Yakuniy Qarorga</span>
+                <span className="text-foreground font-medium">{t('hero.feature4')}</span>
               </div>
             </div>
 
@@ -45,12 +46,12 @@ const Hero = () => {
               <Button variant="hero" size="lg" className="text-lg px-8 py-6" onClick={() => document.getElementById('accepted-program')?.scrollIntoView({
               behavior: 'smooth'
             })}>
-                Accepted ga ariza ber
+                {t('hero.cta')}
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={() => document.getElementById('contact')?.scrollIntoView({
               behavior: 'smooth'
             })}>
-                Maslahat vaqti belgilay
+                {t('hero.consultation')}
               </Button>
             </div>
 
@@ -69,13 +70,13 @@ const Hero = () => {
             <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Arizalar boshlanadi</p>
-                  <p className="font-semibold text-foreground">1-Avgust, 2025</p>
+                  <p className="text-sm text-muted-foreground">{t('hero.card.text')}</p>
+                  <p className="font-semibold text-foreground">{t('hero.card.date')}</p>
                 </div>
                 <Button variant="hero" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
-                  Boshlash
+                  {t('hero.card.cta')}
                 </Button>
               </div>
             </Card>
