@@ -37,6 +37,26 @@ const Admin = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const fetchSubmissions = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('contact_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setSubmissions(data || []);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to load submissions.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleAuthSuccess = (session: AdminSession) => {
     setAdminSession(session);
     fetchSubmissions();
@@ -79,32 +99,12 @@ const Admin = () => {
     };
 
     checkAdminSession();
-  }, []);
+  }, [fetchSubmissions]);
 
   // Show auth component if admin is not logged in
   if (!adminSession) {
     return <Auth onAuthSuccess={handleAuthSuccess} />;
   }
-
-  const fetchSubmissions = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('contact_submissions')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setSubmissions(data || []);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to load submissions.",
-        variant: "destructive"
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
