@@ -3,8 +3,86 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    majorInterest: '',
+    educationStatus: '',
+    universities: '',
+    annualContribution: '',
+    additionalComment: ''
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
+      toast({
+        title: "Xatolik",
+        description: "Iltimos, barcha majburiy maydonlarni to'ldiring.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          major_interest: formData.majorInterest,
+          education_status: formData.educationStatus,
+          universities: formData.universities,
+          annual_contribution: formData.annualContribution,
+          additional_comment: formData.additionalComment
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Muvaffaqiyat!",
+        description: "Arizangiz yuborildi! Biz 24 soat ichida sizga aloqaga chiqamiz."
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        majorInterest: '',
+        educationStatus: '',
+        universities: '',
+        annualContribution: '',
+        additionalComment: ''
+      });
+
+    } catch (error) {
+      toast({
+        title: "Xatolik",
+        description: "Arizani yuborishda xatolik yuz berdi. Qaytadan urinib ko'ring.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,54 +106,89 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">Name</label>
-                  <Input placeholder="Your first name" />
+                  <Input 
+                    placeholder="Your first name" 
+                    value={formData.firstName}
+                    onChange={(e) => handleInputChange('firstName', e.target.value)}
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Surname</label>
-                  <Input placeholder="Your last name" />
+                  <Input 
+                    placeholder="Your last name" 
+                    value={formData.lastName}
+                    onChange={(e) => handleInputChange('lastName', e.target.value)}
+                  />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input type="email" placeholder="your.email@example.com" />
+                <Input 
+                  type="email" 
+                  placeholder="your.email@example.com" 
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Phone Number</label>
-                <Input type="tel" placeholder="+998 90 123 45 67" />
+                <Input 
+                  type="tel" 
+                  placeholder="+998 90 123 45 67" 
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Major or Areas Interested</label>
-                <Input placeholder="e.g., Computer Science, Medicine, Business" />
+                <Input 
+                  placeholder="e.g., Computer Science, Medicine, Business" 
+                  value={formData.majorInterest}
+                  onChange={(e) => handleInputChange('majorInterest', e.target.value)}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Current Education Status</label>
-                <Input placeholder="e.g., Grade 11, High School Graduate, University Transfer" />
+                <Input 
+                  placeholder="e.g., Grade 11, High School Graduate, University Transfer" 
+                  value={formData.educationStatus}
+                  onChange={(e) => handleInputChange('educationStatus', e.target.value)}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">List 5 Universities You Wanna Get In</label>
                 <Textarea 
                   placeholder="Please list your top 5 university choices..."
                   rows={4}
+                  value={formData.universities}
+                  onChange={(e) => handleInputChange('universities', e.target.value)}
                 />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Annual Contribution Towards Uni</label>
-                <Input placeholder="e.g., $50,000, Full scholarship needed, etc." />
+                <Input 
+                  placeholder="e.g., $50,000, Full scholarship needed, etc." 
+                  value={formData.annualContribution}
+                  onChange={(e) => handleInputChange('annualContribution', e.target.value)}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Additional Comment</label>
                 <Textarea 
                   placeholder="Tell us about your academic background, extracurricular activities, and goals..."
                   rows={5}
+                  value={formData.additionalComment}
+                  onChange={(e) => handleInputChange('additionalComment', e.target.value)}
                 />
               </div>
               <Button 
                 variant="hero" 
                 size="lg" 
                 className="w-full"
-                onClick={() => alert('Arizang uchun rahmat! Biz senga maslahat vaqti belgilash uchun 24 soat ichida aloqaga chiqamiz.')}
+                onClick={handleSubmit}
+                disabled={isSubmitting}
               >
-                Arizani yuborish
+                {isSubmitting ? 'Yuborilmoqda...' : 'Arizani yuborish'}
               </Button>
             </CardContent>
           </Card>
