@@ -49,8 +49,8 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
         return;
       }
 
-      // Verify password
-      const isPasswordValid = await bcrypt.compare(password, adminData.password_hash);
+      // Compare password directly (NOT RECOMMENDED FOR PRODUCTION)
+      const isPasswordValid = password === adminData.password_hash;
       
       if (!isPasswordValid) {
         toast({

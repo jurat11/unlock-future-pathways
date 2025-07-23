@@ -6,7 +6,7 @@ UPDATE public.admins
 SET username = 'admin' 
 WHERE username = 'k.shohruh0242@gmail.com';
 
--- Update the password hash to correct bcrypt hash for "admin123"
+-- Update the password to plain text (NOT RECOMMENDED FOR PRODUCTION)
 UPDATE public.admins 
-SET password_hash = '$2b$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WOFpHH6xU6Y6wPsxOmJu6' 
+SET password_hash = 'admin123' 
 WHERE username = 'admin';
