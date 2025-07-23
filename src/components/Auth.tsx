@@ -96,7 +96,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
           <p className="text-muted-foreground">Access the admin dashboard</p>
           <div className="mt-4 p-4 bg-muted rounded-lg text-sm">
             <p className="font-medium mb-2">Default Admin Credentials:</p>
-            <p><strong>Email:</strong> admin@example.com</p>
+            <p><strong>Email:</strong> admin@unlocku.uz</p>
             <p><strong>Password:</strong> admin123</p>
           </div>
         </CardHeader>
@@ -106,7 +106,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
               <label className="text-sm font-medium mb-2 block">Email</label>
               <Input
                 type="email"
-                placeholder="admin@example.com"
+                placeholder="admin@unlocku.uz"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
