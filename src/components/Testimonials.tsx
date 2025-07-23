@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Testimonials = () => {
+  const { t } = useLanguage();
+  
   const testimonials = [{
     name: "Aziza Karimova",
     location: "Samarqand",
@@ -38,25 +42,29 @@ const Testimonials = () => {
     text: "UNLOCK faqat imtihonlarga tayyorlamaydi - hayotga tayyorlaydi. Bu yerda o'rgangan ko'nikmalar universitentda har kuni yordam bermoqda.",
     achievement: "Dekan ro'yxatidagi talaba"
   }];
-  return <section id="testimonials" className="py-20 bg-background">
+  
+  return (
+    <section id="testimonials" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Muvaffaqiyat <span className="text-primary">hikoyalari</span>
+            {t('testimonials.title')} <span className="text-primary">{t('testimonials.title.highlight')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Bizning Accepted dasturi orqali ta'lim yo'llarini o'zgartirib, orzulariga erishgan 
-            talabalarimizning hikoyalarini eshiting.
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => <Card key={index} className="relative hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="relative hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <Quote className="h-8 w-8 text-primary/30 absolute top-4 right-4" />
                   <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
                 </div>
                 
@@ -78,12 +86,12 @@ const Testimonials = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
-
-        {/* Statistics */}
-        
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Testimonials;
