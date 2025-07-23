@@ -12,7 +12,7 @@ interface AuthProps {
 }
 
 const Auth = ({ onAuthSuccess }: AuthProps) => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -21,10 +21,10 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !password) {
+    if (!username || !password) {
       toast({
         title: "Error",
-        description: "Please enter email and password.",
+        description: "Please enter username and password.",
         variant: "destructive"
       });
       return;
@@ -37,13 +37,13 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
       const { data: adminData, error } = await supabase
         .from('admins')
         .select('*')
-        .eq('email', email.toLowerCase())
+        .eq('username', username.toLowerCase())
         .single();
 
       if (error || !adminData) {
         toast({
           title: "Error",
-          description: "Invalid email or password.",
+          description: "Invalid username or password.",
           variant: "destructive"
         });
         return;
@@ -55,7 +55,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
       if (!isPasswordValid) {
         toast({
           title: "Error",
-          description: "Invalid email or password.",
+          description: "Invalid username or password.",
           variant: "destructive"
         });
         return;
@@ -64,7 +64,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
       // Store admin session in localStorage
       const adminSession = {
         id: adminData.id,
-        email: adminData.email,
+        username: adminData.username,
         authenticated: true,
         loginTime: new Date().getTime()
       };
@@ -96,19 +96,19 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
           <p className="text-muted-foreground">Access the admin dashboard</p>
           <div className="mt-4 p-4 bg-muted rounded-lg text-sm">
             <p className="font-medium mb-2">Default Admin Credentials:</p>
-            <p><strong>Email:</strong> k.shohruh0242@gmail.com</p>
+            <p><strong>Username:</strong> admin</p>
             <p><strong>Password:</strong> admin123</p>
           </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleAuth} className="space-y-4">
             <div>
-              <label className="text-sm font-medium mb-2 block">Email</label>
+              <label className="text-sm font-medium mb-2 block">Username</label>
               <Input
-                type="email"
-                placeholder="k.shohruh0242@gmail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="admin"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
