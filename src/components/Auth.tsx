@@ -12,7 +12,7 @@ interface AuthProps {
 }
 
 // Hardcoded admin credentials
-const ADMIN_EMAIL = "admin@unlocku.uz";
+const ADMIN_EMAIL = "admin@example.com";
 const ADMIN_PASSWORD = "admin123";
 
 const Auth = ({ onAuthSuccess }: AuthProps) => {
@@ -130,7 +130,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
               <label className="text-sm font-medium mb-2 block">Email</label>
               <Input
                 type="email"
-                placeholder="admin@unlocku.uz"
+                placeholder="admin@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
