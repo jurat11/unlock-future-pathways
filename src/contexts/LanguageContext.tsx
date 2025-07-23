@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'en' | 'uz';
+export type Language = 'en' | 'uz' | 'ru';
 
 interface LanguageContextType {
   language: Language;
@@ -155,6 +155,78 @@ const translations = {
     'common.error': 'Xatolik',
     'common.success': 'Muvaffaqiyat',
   },
+  ru: {
+    // Hero section
+    'hero.title': 'Поступи в',
+    'hero.title.accepted': 'Университет мечты!',
+    'hero.subtitle': 'Получи самый полный пакет поступления от UNLOCK UZBEKISTAN. Работай с 3 специалистами: Стратегом, Наставником по эссе и Помощником. Выбери наш отбор университетов или получи 100% возврат денег.',
+    'hero.cta': 'Подать заявку в Accepted',
+    'hero.consultation': 'Записаться на консультацию',
+    'hero.feature1': '3 специалиста для каждого студента',
+    'hero.feature2': '100% Гарантия возврата денег*',
+    'hero.feature3': 'Полная помощь с заявкой',
+    'hero.feature4': 'С 1 августа до финального решения',
+    'hero.card.text': 'Подача заявок начинается',
+    'hero.card.date': '1 августа 2025',
+    'hero.card.cta': 'Начать',
+    
+    // Contact form
+    'contact.title.accepted': 'ACCEPTED',
+    'contact.title.text': 'Подать заявку',
+    'contact.subtitle': 'Готов работать с 3 специалистами для поступления в университет мечты? Начни подачу заявки сегодня или запишись на консультацию.',
+    'contact.form.title': 'Подать заявку в программу Accepted',
+    'contact.form.name': 'Имя',
+    'contact.form.surname': 'Фамилия',
+    'contact.form.email': 'Email',
+    'contact.form.phone': 'Номер телефона',
+    'contact.form.major': 'Специальность или интересы',
+    'contact.form.education': 'Текущий статус образования',
+    'contact.form.universities': 'Список 5 университетов для поступления',
+    'contact.form.contribution': 'Годовой вклад в университет',
+    'contact.form.comment': 'Дополнительный комментарий',
+    'contact.form.submit': 'Отправить заявку',
+    'contact.form.submitting': 'Отправка...',
+    'contact.form.placeholder.name': 'Ваше имя',
+    'contact.form.placeholder.surname': 'Ваша фамилия',
+    'contact.form.placeholder.email': 'your.email@example.com',
+    'contact.form.placeholder.phone': '+998 90 123 45 67',
+    'contact.form.placeholder.major': 'например: Информатика, Медицина, Бизнес',
+    'contact.form.placeholder.education': 'например: 11 класс, Выпускник школы, Перевод из университета',
+    'contact.form.placeholder.universities': 'Перечислите ваши топ-5 университетов...',
+    'contact.form.placeholder.contribution': 'например: $50,000, Нужна полная стипендия и т.д.',
+    'contact.form.placeholder.comment': 'Расскажите о вашем академическом прошлом, внеклассной деятельности и целях...',
+    'contact.info.location.title': 'Наше местоположение',
+    'contact.info.location.address': 'Ташкент, Узбекистан',
+    'contact.info.location.description': 'Главный офис UNLOCK UZBEKISTAN. Мы обслуживаем студентов по всей стране, которые хотят поступать в университеты США, Великобритании, Европы и Азии.',
+    'contact.info.phone.title': 'Телефон',
+    'contact.info.phone.number': '+998 90 123 45 67',
+    'contact.info.phone.description': 'Позвоните нам, чтобы записаться на консультацию по программе Accepted.',
+    'contact.info.email.title': 'Email',
+    'contact.info.email.address': 'accepted@unlocku.uz',
+    'contact.info.email.description': 'Отправьте нам ваши вопросы о поступлении по email, и мы ответим в течение 24 часов.',
+    'contact.info.hours.title': 'Рабочие часы',
+    'contact.info.hours.time': 'Пн - Пт: 9:00 - 18:00',
+    'contact.info.hours.description': 'Мы доступны в рабочие часы для консультаций и помощи с заявками.',
+    'contact.cta.title': 'Готов поступить?',
+    'contact.cta.description': 'Подача заявок начинается 1 августа 2025. Получи приоритетную консультацию с ранними советами.',
+    'contact.cta.button': 'Получить приоритетный доступ',
+    'contact.form.error.required': 'Пожалуйста, заполните все обязательные поля.',
+    'contact.form.error.submit': 'Ошибка отправки заявки. Попробуйте еще раз.',
+    'contact.form.success.title': 'Успех!',
+    'contact.form.success.description': 'Ваша заявка отправлена! Мы свяжемся с вами в течение 24 часов.',
+    
+    // Navigation
+    'nav.about': 'О нас',
+    'nav.courses': 'Курсы',
+    'nav.testimonials': 'Истории успеха',
+    'nav.faq': 'Вопросы',
+    'nav.contact': 'Контакты',
+    
+    // Common
+    'common.loading': 'Загрузка...',
+    'common.error': 'Ошибка',
+    'common.success': 'Успех',
+  },
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -162,7 +234,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'uz')) {
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'uz' || savedLanguage === 'ru')) {
       setLanguage(savedLanguage);
     }
   }, []);
