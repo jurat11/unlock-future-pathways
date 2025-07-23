@@ -3,9 +3,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Mail, Phone, GraduationCap, DollarSign, MessageSquare } from "lucide-react";
+import { ArrowLeft, Mail, Phone, GraduationCap, DollarSign, MessageSquare, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import Auth from "@/components/Auth";
+import { User, Session } from '@supabase/supabase-js';
 
 interface ContactSubmission {
   id: string;
@@ -25,12 +27,64 @@ const Admin = () => {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedSubmission, setSelectedSubmission] = useState<ContactSubmission | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  useEffect(() => {
+  const handleAuthSuccess = (authenticatedUser: User, userSession: Session) => {
+    setUser(authenticatedUser);
+    setSession(userSession);
     fetchSubmissions();
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    setSession(null);
+    toast({
+      title: "Chiqish",
+      description: "Tizimdan muvaffaqiyatli chiqdingiz."
+    });
+  };
+
+  useEffect(() => {
+    // Check for existing session on component mount
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        setSession(session);
+        fetchSubmissions();
+      } else {
+        setLoading(false);
+      }
+    };
+    
+    checkSession();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (session?.user) {
+          setUser(session.user);
+          setSession(session);
+          fetchSubmissions();
+        } else {
+          setUser(null);
+          setSession(null);
+          setLoading(false);
+        }
+      }
+    );
+
+    return () => subscription.unsubscribe();
   }, []);
+
+  // Show auth component if user is not logged in
+  if (!user || !session) {
+    return <Auth onAuthSuccess={handleAuthSuccess} />;
+  }
 
   const fetchSubmissions = async () => {
     try {
@@ -167,10 +221,16 @@ const Admin = () => {
             <h1 className="text-3xl font-bold">Admin Dashboard</h1>
             <p className="text-muted-foreground">Barcha ariza yuborishlarini ko'ring</p>
           </div>
-          <Button variant="outline" onClick={() => navigate('/')}>
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Bosh sahifaga
-          </Button>
+          <div className="flex gap-2">
+            <Button variant="outline" onClick={() => navigate('/')}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Bosh sahifaga
+            </Button>
+            <Button variant="outline" onClick={handleLogout}>
+              <LogOut className="h-4 w-4 mr-2" />
+              Chiqish
+            </Button>
+          </div>
         </div>
 
         <Card>
