@@ -219,45 +219,45 @@ const Admin = () => {
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-            <p className="text-muted-foreground">Barcha ariza yuborishlarini ko'ring</p>
+            <p className="text-muted-foreground">View all form submissions</p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" onClick={() => navigate('/')}>
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Bosh sahifaga
+              Back to Home
             </Button>
             <Button variant="outline" onClick={handleLogout}>
               <LogOut className="h-4 w-4 mr-2" />
-              Chiqish
+              Logout
             </Button>
           </div>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>Ariza yuborishlar ({submissions.length})</CardTitle>
+            <CardTitle>Form Submissions ({submissions.length})</CardTitle>
           </CardHeader>
           <CardContent>
             {loading ? (
               <div className="text-center py-8">
-                <p>Yuklanmoqda...</p>
+                <p>Loading...</p>
               </div>
             ) : submissions.length === 0 ? (
               <div className="text-center py-8">
-                <p className="text-muted-foreground">Hali ariza yuborishlar yo'q</p>
+                <p className="text-muted-foreground">No submissions yet</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Ism</TableHead>
-                      <TableHead>Familiya</TableHead>
+                      <TableHead>First Name</TableHead>
+                      <TableHead>Last Name</TableHead>
                       <TableHead>Email</TableHead>
-                      <TableHead>Telefon</TableHead>
-                      <TableHead>Qiziqish sohasi</TableHead>
-                      <TableHead>Sana</TableHead>
-                      <TableHead>Harakat</TableHead>
+                      <TableHead>Phone</TableHead>
+                      <TableHead>Major Interest</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Action</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -275,7 +275,7 @@ const Admin = () => {
                             size="sm"
                             onClick={() => setSelectedSubmission(submission)}
                           >
-                            Ko'rish
+                            View Details
                           </Button>
                         </TableCell>
                       </TableRow>

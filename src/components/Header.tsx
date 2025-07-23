@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
@@ -21,27 +24,28 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              Biz Haqimizda
+              {t('nav.about')}
             </a>
             <a href="#accepted-program" className="text-foreground hover:text-primary transition-colors">
               Accepted
             </a>
             <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">
-              Fikrlar
+              {t('nav.testimonials')}
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Aloqa
+              {t('nav.contact')}
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Toggle & CTA Button */}
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle />
             <Button 
               variant="hero" 
               size="sm"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Hoziroq Ariza Bering
+              {t('hero.cta')}
             </Button>
           </div>
 
@@ -63,7 +67,7 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Biz Haqimizda
+                {t('nav.about')}
               </a>
               <a 
                 href="#accepted-program" 
@@ -77,26 +81,29 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Fikrlar
+                {t('nav.testimonials')}
               </a>
               <a 
                 href="#contact" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Aloqa
+                {t('nav.contact')}
               </a>
-              <Button 
-                variant="hero" 
-                size="sm" 
-                className="w-fit"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Hoziroq Ariza Bering
-              </Button>
+              <div className="flex items-center gap-3">
+                <LanguageToggle />
+                <Button 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-fit"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {t('hero.cta')}
+                </Button>
+              </div>
             </nav>
           </div>
         )}

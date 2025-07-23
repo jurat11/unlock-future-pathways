@@ -11,10 +11,13 @@ interface AuthProps {
   onAuthSuccess: (user: User, session: Session) => void;
 }
 
+// Hardcoded admin credentials
+const ADMIN_EMAIL = "admin@unlocku.uz";
+const ADMIN_PASSWORD = "admin123";
+
 const Auth = ({ onAuthSuccess }: AuthProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignUp, setIsSignUp] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { toast } = useToast();
@@ -47,8 +50,18 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
     
     if (!email || !password) {
       toast({
-        title: "Xatolik",
-        description: "Email va parolni kiriting.",
+        title: "Error",
+        description: "Please enter email and password.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Check hardcoded credentials
+    if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+      toast({
+        title: "Error",
+        description: "Invalid admin credentials.",
         variant: "destructive"
       });
       return;
@@ -57,49 +70,41 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
     setLoading(true);
 
     try {
-      if (isSignUp) {
-        const redirectUrl = `${window.location.origin}/admin`;
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: redirectUrl
-          }
-        });
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
 
-        if (error) throw error;
-
-        toast({
-          title: "Ro'yxatdan o'tish muvaffaqiyatli!",
-          description: "Emailingizni tasdiqlash uchun pochtangizni tekshiring."
-        });
+      if (error) {
+        // If user doesn't exist, create them
+        if (error.message.includes("Invalid login credentials")) {
+          const { error: signUpError } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              emailRedirectTo: `${window.location.origin}/admin`
+            }
+          });
+          
+          if (signUpError) throw signUpError;
+          
+          toast({
+            title: "Admin account created",
+            description: "Please check your email to confirm your account."
+          });
+        } else {
+          throw error;
+        }
       } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password
-        });
-
-        if (error) throw error;
-
         toast({
-          title: "Kirish muvaffaqiyatli!",
-          description: "Admin paneliga xush kelibsiz."
+          title: "Login successful!",
+          description: "Welcome to admin dashboard."
         });
       }
     } catch (error: any) {
-      let errorMessage = "Kutilmagan xatolik yuz berdi.";
-      
-      if (error.message.includes("Invalid login credentials")) {
-        errorMessage = "Email yoki parol noto'g'ri.";
-      } else if (error.message.includes("User already registered")) {
-        errorMessage = "Bu email allaqachon ro'yxatdan o'tgan.";
-      } else if (error.message.includes("Password should be at least")) {
-        errorMessage = "Parol kamida 6 ta belgidan iborat bo'lishi kerak.";
-      }
-
       toast({
-        title: "Xatolik",
-        description: errorMessage,
+        title: "Error",
+        description: error.message || "An unexpected error occurred.",
         variant: "destructive"
       });
     } finally {
@@ -111,12 +116,13 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">
-            {isSignUp ? "Admin ro'yxatdan o'tish" : "Admin kirish"}
-          </CardTitle>
-          <p className="text-muted-foreground">
-            {isSignUp ? "Admin hisobini yarating" : "Admin paneliga kirish uchun"}
-          </p>
+          <CardTitle className="text-2xl">Admin Login</CardTitle>
+          <p className="text-muted-foreground">Access the admin dashboard</p>
+          <div className="mt-4 p-4 bg-muted rounded-lg text-sm">
+            <p className="font-medium mb-2">Admin Credentials:</p>
+            <p><strong>Email:</strong> {ADMIN_EMAIL}</p>
+            <p><strong>Password:</strong> {ADMIN_PASSWORD}</p>
+          </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleAuth} className="space-y-4">
@@ -124,7 +130,7 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
               <label className="text-sm font-medium mb-2 block">Email</label>
               <Input
                 type="email"
-                placeholder="admin@example.com"
+                placeholder="admin@unlocku.uz"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -132,11 +138,11 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
             </div>
             
             <div>
-              <label className="text-sm font-medium mb-2 block">Parol</label>
+              <label className="text-sm font-medium mb-2 block">Password</label>
               <div className="relative">
                 <Input
                   type={showPassword ? "text" : "password"}
-                  placeholder="Parolingizni kiriting"
+                  placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -162,22 +168,8 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
               className="w-full" 
               disabled={loading}
             >
-              {loading ? "Yuklanmoqda..." : (isSignUp ? "Ro'yxatdan o'tish" : "Kirish")}
+              {loading ? "Loading..." : "Login"}
             </Button>
-
-            <div className="text-center">
-              <Button
-                type="button"
-                variant="link"
-                onClick={() => setIsSignUp(!isSignUp)}
-                className="text-sm"
-              >
-                {isSignUp 
-                  ? "Allaqachon hisobingiz bormi? Kirish" 
-                  : "Hisobingiz yo'qmi? Ro'yxatdan o'ting"
-                }
-              </Button>
-            </div>
           </form>
         </CardContent>
       </Card>
