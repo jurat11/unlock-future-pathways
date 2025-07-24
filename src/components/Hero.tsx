@@ -71,7 +71,9 @@ const Hero = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">{t('hero.card.text')}</p>
-                  <p className="font-semibold text-foreground">{t('hero.card.date')}</p>
+                  {t('hero.card.date') && (
+                    <p className="font-semibold text-foreground">{t('hero.card.date')}</p>
+                  )}
                 </div>
                 <Button variant="hero" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({
                 behavior: 'smooth'
