@@ -264,7 +264,7 @@ const translations = {
     'about.title.highlight': 'UNLOCK UZBEKISTAN',
     'about.subtitle': '2022-yilda Toshkentda tashkil etilgan. Biz Ivy League maktablariga kirgan o\'zbek talabalar bilan podcast qilishdan boshladik. Endi 50,000+ ko\'ruvchi bilan "Accepted" dasturi orqali to\'liq qabul yordamini taklif qilamiz.',
     'about.values.mission.title': 'Bizning maqsadimiz',
-    'about.values.mission.description': 'O\'zbek talabalariga xalqaro universitet qabuli masalasida mutaxassis yo\'l-yo\'riq va isbotlangan strategiyalar bilan yordam berish.',
+    'about.values.mission.description': 'O\'zbekistonlik talabalarga xalqaro universitetlarga kirish jarayonida samarali maslahatlar va usullar orqali ko\'maklashish.',
     'about.values.story.title': 'Bizning hikoyamiz',
     'about.values.story.description': 'Ivy League universitetlariga kirgan talabalar bilan podcast qilishdan boshlab, endi talabalarni to\'liq qabul xizmatlari bilan qo\'llab-quvvatlaymiz.',
     'about.values.impact.title': 'Jamiyatga ta\'sir',
