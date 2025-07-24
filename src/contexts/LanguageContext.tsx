@@ -84,7 +84,7 @@ const translations = {
     'common.success': 'Success',
     
     // About section
-    'about.title': 'About',
+    'about.title': '',
     'about.title.highlight': 'UNLOCK UZBEKISTAN',
     'about.subtitle': 'Founded in Tashkent in 2022. We started by podcasting with Uzbek students who got into Ivy League schools. Now we offer comprehensive admission help through our "Accepted" program with 50,000+ viewers.',
     'about.values.mission.title': 'Our Mission',
@@ -260,7 +260,7 @@ const translations = {
     'common.success': 'Muvaffaqiyat',
     
     // About section
-    'about.title': 'haqida',
+    'about.title': '',
     'about.title.highlight': 'UNLOCK UZBEKISTAN',
     'about.subtitle': '2022-yilda Toshkentda tashkil etilgan. Biz Ivy League maktablariga kirgan o\'zbek talabalar bilan podcast qilishdan boshladik. Endi 50,000+ ko\'ruvchi bilan "Accepted" dasturi orqali to\'liq qabul yordamini taklif qilamiz.',
     'about.values.mission.title': 'Maqsadimiz',
