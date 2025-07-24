@@ -22,22 +22,22 @@ const CourseDetails = () => {
   }];
   
   const checklistItems = [
-    "Aniq tanlangan va asoslab berilgan karera sohasi yoki akademik qiziqish",
-    "Ta'lim va shaxsiy ehtiyojlarga mos keladigan 5 ta universitetning yakuniy ro'yxati",
-    "Aniq vaqt jadvali bilan Early Action/Early Decision universitetlarini tanlash",
-    "Mavjud va yangi taklif qilingan EA arizalarini yaxshilash",
-    "Mavjud va yangi taklif qilingan Faxriy dastur arizalarini yaxshilash",
-    "Yakunlashgan CV, rezyume va motivatsion xat",
-    "Portfolio yoki shaxsiy veb-sayt yaratish (agar tegishli bo'lsa)",
-    "Ijtimoiy media profil optimallashtirish (LinkedIn va/yoki Instagram)",
-    "To'ldirilgan shaxsiy bayonot yoki motivatsion xat",
-    "Yakunlashgan tavsiya xatlari (loyihalangan yoki yo'naltirilgan)",
-    "Barcha maqsadli universitetlar uchun to'ldirilgan qo'shimcha insholar",
-    "Barcha ariza portallari (masalan, Common App) to'liq to'ldirilgan va ko'rib chiqilgan",
-    "CSS profil va boshqa moliyaviy hujjatlar tayyorlangan va yuborilgan",
-    "Suhbatga tayyorgarlik (agar taklif qilingan bo'lsa)",
-    "Kollej-specifik video yuborishlar (agar so'ralgan bo'lsa)",
-    "Kollej-specifik shakllar va hujjatlar (agar so'ralgan bo'lsa)"
+    "O'zingiz uchun tanlagan soha yoki akademik qiziqish bo'lishi.",
+    "Ta'lim va shaxsiy ehtiyojlaringizga mos keladigan 5 ta universitetdan iborat ro'yxat.",
+    "Early Action/Early Decision uchun topshirish mumkin bo'lgan universitetlar.",
+    "Darsdan tashqari mashg'ulotlar olib borilgan bo'lishi.",
+    "Faxriy yutuqqa ega bo'lish.",
+    "To'liq CV, rezyume va o'qish istagingizni bildiruvchi motivatsion xat.",
+    "Portfolio yoki shaxsiy veb-sayt yaratish.",
+    "Ijtimoiy tarmoqda profil optimallashtirish (LinkedIn va/yoki Instagram).",
+    "To'ldirilgan Personal Statement yoki motivatsion xat.",
+    "Tavsiyanomalarga ega bo'lish (o'zingiz yoki o'zga tomonidan).",
+    "Mo'ljalingizdagi universitetlar uchun qo'shimcha insholar yozilgan bo'lishi.",
+    "Barcha ariza portallari (masalan, Common App) to'liq to'ldirilishi va ko'rib chiqilishi.",
+    "CSS profil va boshqa moliyaviy hujjatlar tayyorlanishi.",
+    "Suhbatga tayyorgarlik (taklif qilingan bo'lsa).",
+    "Universitet uchun video material yuborish (talab qilinsa).",
+    "Universitetga xos hujjatlarni to'ldirish (talab qilinsa)."
   ];
   
   return (
