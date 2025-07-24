@@ -290,8 +290,8 @@ const translations = {
     'testimonials.subtitle': 'Bizning Accepted dasturi orqali ta\'lim yo\'llarini o\'zgartirib, orzulariga erishgan talabalarimizning hikoyalarini eshiting.',
     
     // FAQ section
-    'faq.title': 'Ko\'p',
-    'faq.title.highlight': 'berilgan savollar',
+    'faq.title': 'Ko\'p beriladigan',
+    'faq.title.highlight': 'savollar',
     'faq.subtitle': 'Bizning Accepted dasturi haqida eng ko\'p soraladigan savollarga javoblar.',
     'faq.q1.question': 'Kimlar Accepted dasturiga kirishi mumkin?',
     'faq.q1.answer': 'Bizning dastur oliy ta\'limni jiddiy ko\'radigan barcha talabalarga ochiq. Qishloq yoki shahardan bo\'lishingizdan qat\'iy nazar, dasturimiz har qanday fonda muvaffaqiyat qozonishingizga yordam beradi.',
