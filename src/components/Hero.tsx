@@ -67,22 +67,14 @@ const Hero = () => {
             </div>
             
             {/* Floating Card */}
-            <Card className="absolute bottom-4 left-4 right-4 bg-gradient-primary border-0 shadow-glow">
-              <div className="p-6 text-center">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-3 h-3 rounded-full bg-white/80 animate-pulse mr-2"></div>
-                  <p className="text-sm font-medium text-white/90 uppercase tracking-wide">
-                    {t('hero.card.text')}
-                  </p>
+            <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-muted-foreground">{t('hero.card.text')}</p>
                 </div>
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  className="w-full bg-white text-primary hover:bg-white/90 font-semibold shadow-lg" 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({
-                    behavior: 'smooth'
-                  })}
-                >
+                <Button variant="hero" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({
+                behavior: 'smooth'
+              })}>
                   {t('hero.card.cta')}
                 </Button>
               </div>
