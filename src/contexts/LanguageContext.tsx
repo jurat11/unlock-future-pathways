@@ -313,7 +313,7 @@ const translations = {
     // Course Details section
     'course.title': 'to\'liq qabul paketi',
     'course.title.highlight': 'Accepted',
-    'course.subtitle': 'Bizning eng to\'liq qabul dasturimiz. 1-avgustdan yakuniy qarorgacha 3 ta mutaxassis bilan ishla. 100% pul qaytarim kafolati uchun bizning universitet tanlovimizni tanla.',
+    'course.subtitle': '"Accepted" dasturi orqali siz uch mutaxassis — strateg, insho yozish bo\'yicha mentor hamda qabul jarayonida ko\'maklashuvchi xodim bilan ishlash imkoniyatiga ega bo\'lasiz.',
     'course.team.title': 'Sening mutaxassis jamoyaing',
     'course.team.strategist': 'Strategist',
     'course.team.strategist.description': 'Ariza strategiyasini boshqaradi, kollej ro\'yxatini tuzadi, vaqt jadvalini rejalashtiradi, pozitsiya va faoliyatlar bilan yordam beradi.',
