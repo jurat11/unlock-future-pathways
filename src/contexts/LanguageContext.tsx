@@ -301,13 +301,13 @@ const translations = {
     'faq.q3.answer': 'To\'liq dastur 16 hafta davom etadi, haftada 3 ta sessiya bilan. Har bir sessiya oldingi ustiga quriladi va qabul maqsadlaringiz uchun to\'liq tayyorgarlikni ta\'minlaydi.',
     'faq.q4.question': 'To\'lov rejalari yoki stipendiyalar bormi?',
     'faq.q4.answer': 'Ha! Biz moslashuvchan to\'lov rejalarini va moliyaviy ehtiyojini ko\'rsatgan talabalar uchun ehtiyojga asoslangan stipendiyalarni taklif qilamiz. Maqsadimiz sifatli ta\'limni hammaga ochiq qilish.',
-    'faq.q5.question': 'Agar dasturdan norozi bo\'lsam nima bo\'ladi?',
+    'faq.q5.question': 'Dasturdan norozi bo\'lsam, nima bo\'ladi?',
     'faq.q5.answer': 'Biz 30 kunlik pul qaytarish kafolatini taklif qilamiz. Agar dastlabki 30 kun ichida dasturdan to\'liq norozi bo\'lsangiz, hech qanday savol berilmagan holda to\'liq qaytarib beramiz.',
-    'faq.q6.question': 'Dastur tugagandan keyin ham yordam olaman?',
+    'faq.q6.question': 'Dastur tugagandan so\'ng ham yordam olamanmi?',
     'faq.q6.answer': 'Albatta! Sizda bizning bitiruvchilar tarmog\'iga, kurs materiallariga umrbod kirish huquqi bo\'ladi va qo\'shimcha mentorlik sessiyalarini belgilashingiz mumkin. Biz sizning uzoq muddatli muvaffaqiyatingizga sodiqmiz.',
-    'faq.q7.question': 'Jonli sessiyalar qanday ishlaydi?',
+    'faq.q7.question': 'Mashg\'ulotlar qay tartibda va qayerda o\'tkaziladi?',
     'faq.q7.answer': 'Jonli sessiyalar bizning ta\'lim platformamiz orqali onlayn o\'tkaziladi. Ular interaktiv bo\'lib, real vaqtda savol berishingizga imkon beradi. Barcha sessiyalar yozib olinadi, shuning uchun keyinroq ko\'rib chiqishingiz mumkin.',
-    'faq.q8.question': 'Dastur uchun qanday texnologiya kerak?',
+    'faq.q8.question': 'Dastur uchun qanday texnik qurilma kerak?',
     'faq.q8.answer': 'Sizga internet ulanishi bo\'lgan kompyuter yoki planshet kerak bo\'ladi. Bizning platformamiz barcha zamonaviy brauzerlarda ishlaydi va to\'liq ishtirok etishingizni ta\'minlash uchun texnik yordam beramiz.',
     
     // Course Details section
