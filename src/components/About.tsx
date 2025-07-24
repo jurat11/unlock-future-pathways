@@ -1,35 +1,28 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart, Users, Lightbulb } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 const About = () => {
-  const { t } = useLanguage();
-  
-  const values = [
-    {
-      icon: Target,
-      title: t('about.values.mission.title'),
-      description: t('about.values.mission.description')
-    },
-    {
-      icon: Heart,
-      title: t('about.values.story.title'),
-      description: t('about.values.story.description')
-    },
-    {
-      icon: Users,
-      title: t('about.values.impact.title'),
-      description: t('about.values.impact.description')
-    },
-    {
-      icon: Lightbulb,
-      title: t('about.values.approach.title'),
-      description: t('about.values.approach.description')
-    }
-  ];
-
-  return (
-    <section id="about" className="py-20 bg-background">
+  const {
+    t
+  } = useLanguage();
+  const values = [{
+    icon: Target,
+    title: t('about.values.mission.title'),
+    description: t('about.values.mission.description')
+  }, {
+    icon: Heart,
+    title: t('about.values.story.title'),
+    description: t('about.values.story.description')
+  }, {
+    icon: Users,
+    title: t('about.values.impact.title'),
+    description: t('about.values.impact.description')
+  }, {
+    icon: Lightbulb,
+    title: t('about.values.approach.title'),
+    description: t('about.values.approach.description')
+  }];
+  return <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -41,8 +34,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {values.map((value, index) => (
-            <Card key={index} className="text-center hover:shadow-elegant transition-shadow duration-300">
+          {values.map((value, index) => <Card key={index} className="text-center hover:shadow-elegant transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="mb-4 flex justify-center">
                   <div className="p-3 rounded-full bg-primary/10">
@@ -54,8 +46,7 @@ const About = () => {
                   {value.description}
                 </p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <div className="bg-gradient-subtle rounded-2xl p-8 md:p-12">
@@ -71,12 +62,7 @@ const About = () => {
                     <strong className="text-foreground">{t('about.why.expert.title')}:</strong> {t('about.why.expert.description')}
                   </p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">{t('about.why.system.title')}:</strong> {t('about.why.system.description')}
-                  </p>
-                </div>
+                
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
                   <p className="text-muted-foreground">
@@ -106,8 +92,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
