@@ -269,7 +269,7 @@ const translations = {
     'about.values.impact.description': '50,000dan ortiq kuzatuvchi biladiki, biz hozirgacha talabalarga Chicago, Duke, Carnegie Mellon Qatar va NYU universitetlariga kirishda yordam berdik.',
     'about.values.approach.title': 'Yondashuvimiz',
     'about.values.approach.description': 'Har bir talaba uchun uch mutaxassis: rejalashtirish uchun strateg, insho yozish bo\'yicha mentor va arizangizning qolgan qismini tekshirish uchun qabul bo\'yicha tajribali inson.',
-    'about.why.title': 'Nega Accepted ni tanlash kerak?',
+    'about.why.title': 'Nega "Accepted"ni tanlash kerak?',
     'about.why.expert.title': 'Mutaxassis Jamoa',
     'about.why.expert.description': '3 ta mutaxassis bilan ishlang - Strategist, Insho Mentori va to\'liq qamrov uchun Yordamchi.',
     'about.why.system.title': 'Ikki Yo\'nalishli Tizim',
