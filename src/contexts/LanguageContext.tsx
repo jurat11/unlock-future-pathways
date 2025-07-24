@@ -23,7 +23,6 @@ const translations = {
     'hero.feature3': 'Complete application assistance',
     'hero.feature4': 'August 1st to Final Decision',
     'hero.card.text': 'Applications start',
-    'hero.card.date': 'August 1st, 2025',
     'hero.card.cta': 'Get Started',
     
     // Contact form
@@ -199,7 +198,6 @@ const translations = {
     'hero.feature3': 'Ariza topshirish jarayonining boshidan oxirigacha yordam ko\'rsatiladi.',
     'hero.feature4': 'Dastur Avgustdan toki qabul natijalari chiqishiga qadar davom etadi',
     'hero.card.text': 'Arizalar 1-Avgustga qadar qabul qilinadi',
-    'hero.card.date': '',
     'hero.card.cta': 'Ariza topshirish',
     
     // Contact form
@@ -375,7 +373,6 @@ const translations = {
     'hero.feature3': 'Полная помощь с заявкой',
     'hero.feature4': 'С 1 августа до финального решения',
     'hero.card.text': 'Подача заявок начинается',
-    'hero.card.date': '1 августа 2025',
     'hero.card.cta': 'Начать',
     
     // Contact form
