@@ -6,9 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
-import AudienceSelector from "./pages/AudienceSelector";
-import StudentPage from "./pages/StudentPage";
-import ParentPage from "./pages/ParentPage";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
@@ -21,10 +18,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<AudienceSelector />} />
-            <Route path="/general" element={<Index />} />
-            <Route path="/students" element={<StudentPage />} />
-            <Route path="/parents" element={<ParentPage />} />
+            <Route path="/" element={<Index />} />
             <Route path="/admin" element={<Admin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
