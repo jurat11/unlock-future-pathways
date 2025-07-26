@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 
@@ -13,28 +14,31 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/f0246711-0d84-4e23-a1be-7aeb67f9b2da.png" 
               alt="Unlock Logo" 
               className="h-8 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              {t('nav.about')}
-            </a>
-            <a href="#accepted-program" className="text-foreground hover:text-primary transition-colors">
-              Accepted
-            </a>
-            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">
-              {t('nav.testimonials')}
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              {t('nav.contact')}
-            </a>
+            <Link to="/about-us" className="text-foreground hover:text-primary transition-colors">
+              {t('About Us')}
+            </Link>
+            <Link to="/our-team" className="text-foreground hover:text-primary transition-colors">
+              {t('Our Team')}
+            </Link>
+            <Link to="/programs" className="text-foreground hover:text-primary transition-colors">
+              {t('Programs')}
+            </Link>
+            <Link to="/free-resources" className="text-foreground hover:text-primary transition-colors">
+              {t('Free Resources')}
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+              {t('Contact')}
+            </Link>
           </nav>
 
           {/* Language Toggle & CTA Button */}
@@ -62,34 +66,41 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <a 
-                href="#about" 
+              <Link 
+                to="/about-us" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.about')}
-              </a>
-              <a 
-                href="#accepted-program" 
+                {t('About Us')}
+              </Link>
+              <Link 
+                to="/our-team" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Accepted
-              </a>
-              <a 
-                href="#testimonials" 
+                {t('Our Team')}
+              </Link>
+              <Link 
+                to="/programs" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.testimonials')}
-              </a>
-              <a 
-                href="#contact" 
+                {t('Programs')}
+              </Link>
+              <Link 
+                to="/free-resources" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('nav.contact')}
-              </a>
+                {t('Free Resources')}
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('Contact')}
+              </Link>
               <div className="flex items-center gap-3">
                 <LanguageToggle />
                 <Button 
