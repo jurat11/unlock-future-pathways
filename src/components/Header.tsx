@@ -21,12 +21,12 @@ const Header = () => {
     },
     {
       label: t('Our Values'),
-      href: '/about-us#values',
+      href: '/about-us',
       description: t('What drives us to help students succeed')
     },
     {
       label: t('Our Impact'),
-      href: '/about-us#impact',
+      href: '/about-us',
       description: t('Success stories and achievements')
     },
     {
@@ -44,12 +44,12 @@ const Header = () => {
     },
     {
       label: t('Advisory Board'),
-      href: '/our-team#advisory',
+      href: '/our-team',
       description: t('Industry leaders guiding our vision')
     },
     {
       label: t('Expert Counselors'),
-      href: '/our-team#counselors',
+      href: '/our-team',
       description: t('Specialists in different academic areas')
     },
     {
@@ -62,17 +62,17 @@ const Header = () => {
   const programsDropdownItems = [
     {
       label: t('Class of 2030 Program'),
-      href: '/programs#class-2030',
+      href: '/programs',
       description: t('4-year program for current 8th-9th graders')
     },
     {
       label: t('Class of 2031 Program'),
-      href: '/programs#class-2031',
+      href: '/programs',
       description: t('5-year program for current 7th-8th graders')
     },
     {
       label: t('Specialized Programs'),
-      href: '/programs#specialized',
+      href: '/programs',
       description: t('Gap year, transfer, and graduate school prep')
     },
     {
@@ -90,17 +90,17 @@ const Header = () => {
     },
     {
       label: t('Office Locations'),
-      href: '/contact#locations',
+      href: '/contact',
       description: t('Visit us in NYC, LA, or Boston')
     },
     {
       label: t('Contact Methods'),
-      href: '/contact#methods',
+      href: '/contact',
       description: t('Phone, email, Telegram, and social media')
     },
     {
       label: t('FAQ'),
-      href: '/contact#faq',
+      href: '/contact',
       description: t('Quick answers to common questions')
     }
   ];
