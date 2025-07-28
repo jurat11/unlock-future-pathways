@@ -70,8 +70,8 @@ const NavDropdown = ({ label, items, className }: NavDropdownProps) => {
       {/* Dropdown Menu */}
       <div
         className={cn(
-          "absolute top-full left-0 mt-2 w-56 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-2xl shadow-2xl transform transition-all duration-400 ease-out overflow-hidden",
-          "z-[100] before:content-[''] before:absolute before:-top-1 before:left-6 before:w-2 before:h-2 before:bg-white/10 before:border-l before:border-t before:border-white/20 before:rotate-45 before:backdrop-blur-3xl",
+          "absolute top-full left-0 mt-2 w-56 sm:w-64 bg-white/5 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 border border-white/30 rounded-2xl shadow-2xl transform transition-all duration-400 ease-out overflow-hidden",
+          "z-[100] before:content-[''] before:absolute before:-top-1 before:left-6 before:w-2 before:h-2 before:bg-white/10 before:border-l before:border-t before:border-white/30 before:rotate-45 before:backdrop-blur-[40px]",
           isOpen 
             ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" 
             : "opacity-0 translate-y-3 scale-95 pointer-events-none"
@@ -82,10 +82,10 @@ const NavDropdown = ({ label, items, className }: NavDropdownProps) => {
             <Link
               key={index}
               to={item.href}
-              className="flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent/15 transition-all duration-300 group rounded-xl border border-transparent hover:border-white/30 hover:shadow-lg backdrop-blur-sm"
+              className="flex items-center gap-3 px-3 py-2.5 sm:px-4 sm:py-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent/15 transition-all duration-300 group rounded-xl border border-transparent hover:border-white/30 hover:shadow-lg backdrop-blur-sm"
             >
               <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary to-accent opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></div>
-              <span className="font-medium text-foreground/90 group-hover:text-foreground transition-colors duration-300">
+              <span className="font-medium text-sm sm:text-base text-foreground/90 group-hover:text-foreground transition-colors duration-300 leading-tight">
                 {item.label}
               </span>
             </Link>

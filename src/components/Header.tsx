@@ -106,7 +106,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/10 backdrop-blur-3xl supports-[backdrop-filter]:bg-white/5 border-b border-white/20 transition-all duration-300 ease-out">
+    <header className="sticky top-0 z-50 bg-white/5 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 border-b border-white/30 transition-all duration-300 ease-out">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -167,8 +167,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-white/10 animate-fade-in bg-white/5 backdrop-blur-3xl shadow-2xl rounded-b-3xl mx-2 mb-4 border-x border-b border-white/10">
-            <nav className="flex flex-col space-y-3 px-4">
+          <div className="md:hidden py-4 sm:py-6 border-t border-white/10 animate-fade-in bg-white/5 backdrop-blur-[50px] supports-[backdrop-filter]:bg-white/5 shadow-2xl rounded-b-3xl mx-2 mb-4 border-x border-b border-white/30">
+            <nav className="flex flex-col space-y-2 sm:space-y-3 px-3 sm:px-4">
               <MobileNavDropdown 
                 label={t('About Us')} 
                 items={aboutDropdownItems.map(item => ({ label: item.label, href: item.href }))}
@@ -186,7 +186,7 @@ const Header = () => {
               />
               <Link 
                 to="/free-resources" 
-                className="text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 backdrop-blur-xl font-medium"
+                className="text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-3 sm:p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 font-medium text-sm sm:text-base leading-tight"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Free Resources')}
