@@ -84,7 +84,7 @@ const NavDropdown = ({ label, items, className }: NavDropdownProps) => {
               to={item.href}
               className="flex items-center gap-3 px-3 py-2.5 sm:px-4 sm:py-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent/15 transition-all duration-300 group rounded-xl border border-transparent hover:border-white/30 hover:shadow-lg backdrop-blur-sm"
             >
-              <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary to-accent opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></div>
+              <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary to-accent opacity-30 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></div>
               <span className="font-medium text-sm sm:text-base text-foreground/90 group-hover:text-foreground transition-colors duration-300 leading-tight">
                 {item.label}
               </span>
