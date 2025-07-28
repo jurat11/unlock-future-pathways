@@ -5,10 +5,105 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import FreeResourcesHoverCard from "@/components/FreeResourcesHoverCard";
+import NavDropdown from "@/components/NavDropdown";
+import MobileNavDropdown from "@/components/MobileNavDropdown";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
+
+  // Dropdown menu data
+  const aboutDropdownItems = [
+    {
+      label: t('Our Story'),
+      href: '/about-us',
+      description: t('Learn about UNLOCK\'s mission and journey')
+    },
+    {
+      label: t('Our Values'),
+      href: '/about-us#values',
+      description: t('What drives us to help students succeed')
+    },
+    {
+      label: t('Our Impact'),
+      href: '/about-us#impact',
+      description: t('Success stories and achievements')
+    },
+    {
+      label: t('Leadership Team'),
+      href: '/our-team',
+      description: t('Meet our expert counselors and educators')
+    }
+  ];
+
+  const teamDropdownItems = [
+    {
+      label: t('Leadership Team'),
+      href: '/our-team',
+      description: t('Our experienced counselors and directors')
+    },
+    {
+      label: t('Advisory Board'),
+      href: '/our-team#advisory',
+      description: t('Industry leaders guiding our vision')
+    },
+    {
+      label: t('Expert Counselors'),
+      href: '/our-team#counselors',
+      description: t('Specialists in different academic areas')
+    },
+    {
+      label: t('Join Our Team'),
+      href: '/contact',
+      description: t('Career opportunities at UNLOCK')
+    }
+  ];
+
+  const programsDropdownItems = [
+    {
+      label: t('Class of 2030 Program'),
+      href: '/programs#class-2030',
+      description: t('4-year program for current 8th-9th graders')
+    },
+    {
+      label: t('Class of 2031 Program'),
+      href: '/programs#class-2031',
+      description: t('5-year program for current 7th-8th graders')
+    },
+    {
+      label: t('Specialized Programs'),
+      href: '/programs#specialized',
+      description: t('Gap year, transfer, and graduate school prep')
+    },
+    {
+      label: t('Program Comparison'),
+      href: '/programs',
+      description: t('Compare all our programs and pricing')
+    }
+  ];
+
+  const contactDropdownItems = [
+    {
+      label: t('Schedule Consultation'),
+      href: '/contact',
+      description: t('Book a free consultation with our experts')
+    },
+    {
+      label: t('Office Locations'),
+      href: '/contact#locations',
+      description: t('Visit us in NYC, LA, or Boston')
+    },
+    {
+      label: t('Contact Methods'),
+      href: '/contact#methods',
+      description: t('Phone, email, Telegram, and social media')
+    },
+    {
+      label: t('FAQ'),
+      href: '/contact#faq',
+      description: t('Quick answers to common questions')
+    }
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
@@ -25,23 +120,27 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/about-us" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
-              {t('About Us')}
-            </Link>
-            <Link to="/our-team" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
-              {t('Our Team')}
-            </Link>
-            <Link to="/programs" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
-              {t('Programs')}
-            </Link>
+            <NavDropdown 
+              label={t('About Us')} 
+              items={aboutDropdownItems}
+            />
+            <NavDropdown 
+              label={t('Our Team')} 
+              items={teamDropdownItems}
+            />
+            <NavDropdown 
+              label={t('Programs')} 
+              items={programsDropdownItems}
+            />
             <FreeResourcesHoverCard>
               <Link to="/free-resources" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
                 {t('Free Resources')}
               </Link>
             </FreeResourcesHoverCard>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
-              {t('Contact')}
-            </Link>
+            <NavDropdown 
+              label={t('Contact')} 
+              items={contactDropdownItems}
+            />
           </nav>
 
           {/* Language Toggle & CTA Button */}
@@ -67,29 +166,23 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t animate-fade-in">
+          <div className="md:hidden py-4 border-t animate-fade-in bg-background/95 backdrop-blur-md">
             <nav className="flex flex-col space-y-4">
-              <Link 
-                to="/about-us" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('About Us')}
-              </Link>
-              <Link 
-                to="/our-team" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('Our Team')}
-              </Link>
-              <Link 
-                to="/programs" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('Programs')}
-              </Link>
+              <MobileNavDropdown 
+                label={t('About Us')} 
+                items={aboutDropdownItems}
+                onLinkClick={() => setIsMenuOpen(false)}
+              />
+              <MobileNavDropdown 
+                label={t('Our Team')} 
+                items={teamDropdownItems}
+                onLinkClick={() => setIsMenuOpen(false)}
+              />
+              <MobileNavDropdown 
+                label={t('Programs')} 
+                items={programsDropdownItems}
+                onLinkClick={() => setIsMenuOpen(false)}
+              />
               <Link 
                 to="/free-resources" 
                 className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
@@ -97,14 +190,12 @@ const Header = () => {
               >
                 {t('Free Resources')}
               </Link>
-              <Link 
-                to="/contact" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('Contact')}
-              </Link>
-              <div className="flex items-center gap-3">
+              <MobileNavDropdown 
+                label={t('Contact')} 
+                items={contactDropdownItems}
+                onLinkClick={() => setIsMenuOpen(false)}
+              />
+              <div className="flex items-center gap-3 pt-4 border-t border-border/50">
                 <LanguageToggle />
                 <Button 
                   variant="hero" 
