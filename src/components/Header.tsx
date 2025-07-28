@@ -16,8 +16,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/f0246711-0d84-4e23-a1be-7aeb67f9b2da.png" 
-              alt="Unlock Logo" 
+              src="/lovable-uploads/c7ba6c55-997b-40c6-9631-dd5f11eacdbe.png" 
+              alt="Unlock Admissions Logo" 
               className="h-8 w-auto"
             />
           </Link>
