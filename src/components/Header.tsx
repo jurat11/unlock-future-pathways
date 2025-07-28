@@ -106,7 +106,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <header className="sticky top-0 z-50 bg-white/10 backdrop-blur-3xl supports-[backdrop-filter]:bg-white/5 border-b border-white/20 transition-all duration-300 ease-out">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -114,32 +114,32 @@ const Header = () => {
             <img 
               src="/lovable-uploads/924fc8c1-9fee-4601-ae97-03ad0311c5ac.png" 
               alt="Unlock Logo" 
-              className="h-8 w-auto transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+              className="h-8 w-auto transition-transform duration-500 ease-out group-hover:scale-110"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-2">
             <NavDropdown 
               label={t('About Us')} 
-              items={aboutDropdownItems}
+              items={aboutDropdownItems.map(item => ({ label: item.label, href: item.href }))}
             />
             <NavDropdown 
               label={t('Our Team')} 
-              items={teamDropdownItems}
+              items={teamDropdownItems.map(item => ({ label: item.label, href: item.href }))}
             />
             <NavDropdown 
               label={t('Programs')} 
-              items={programsDropdownItems}
+              items={programsDropdownItems.map(item => ({ label: item.label, href: item.href }))}
             />
             <FreeResourcesHoverCard>
-              <Link to="/free-resources" className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">
+              <Link to="/free-resources" className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-all duration-500 ease-out relative group px-4 py-2.5 rounded-full hover:bg-white/10 backdrop-blur-md">
                 {t('Free Resources')}
               </Link>
             </FreeResourcesHoverCard>
             <NavDropdown 
               label={t('Contact')} 
-              items={contactDropdownItems}
+              items={contactDropdownItems.map(item => ({ label: item.label, href: item.href }))}
             />
           </nav>
 
@@ -149,6 +149,7 @@ const Header = () => {
             <Button 
               variant="hero" 
               size="sm"
+              className="backdrop-blur-md bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-glow transition-all duration-400"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.cta')}
@@ -157,50 +158,50 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-md"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground/80" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in bg-gradient-to-b from-background/95 to-background/90 backdrop-blur-xl shadow-2xl rounded-b-2xl mx-4 mb-4 border-x border-b border-border/30">
-            <nav className="flex flex-col space-y-4 px-4">
+          <div className="md:hidden py-6 border-t border-white/10 animate-fade-in bg-white/5 backdrop-blur-3xl shadow-2xl rounded-b-3xl mx-2 mb-4 border-x border-b border-white/10">
+            <nav className="flex flex-col space-y-3 px-4">
               <MobileNavDropdown 
                 label={t('About Us')} 
-                items={aboutDropdownItems}
+                items={aboutDropdownItems.map(item => ({ label: item.label, href: item.href }))}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
               <MobileNavDropdown 
                 label={t('Our Team')} 
-                items={teamDropdownItems}
+                items={teamDropdownItems.map(item => ({ label: item.label, href: item.href }))}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
               <MobileNavDropdown 
                 label={t('Programs')} 
-                items={programsDropdownItems}
+                items={programsDropdownItems.map(item => ({ label: item.label, href: item.href }))}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
               <Link 
                 to="/free-resources" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105 p-3 rounded-xl bg-background/50 hover:bg-primary/10 border border-transparent hover:border-primary/20 hover:shadow-lg font-medium"
+                className="text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 backdrop-blur-xl font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Free Resources')}
               </Link>
               <MobileNavDropdown 
                 label={t('Contact')} 
-                items={contactDropdownItems}
+                items={contactDropdownItems.map(item => ({ label: item.label, href: item.href }))}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
-              <div className="flex items-center gap-3 pt-6 border-t border-primary/20 mt-6">
+              <div className="flex items-center gap-3 pt-6 border-t border-white/20 mt-6">
                 <LanguageToggle />
                 <Button 
                   variant="hero" 
                   size="sm" 
-                  className="w-fit shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-fit shadow-2xl hover:shadow-glow transition-all duration-400 backdrop-blur-md bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
                   onClick={() => {
                     setIsMenuOpen(false);
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
