@@ -24,7 +24,7 @@ const MobileNavDropdown = ({ label, items, onLinkClick }: MobileNavDropdownProps
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-3 sm:p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 group"
+        className="flex items-center justify-between w-full text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-3 sm:p-4 rounded-2xl bg-white/70 hover:bg-white/80 border border-white/10 hover:border-white/20 backdrop-blur-[20px] supports-[backdrop-filter]:bg-white/70 group"
       >
         <span className="font-medium text-sm sm:text-base leading-tight">{label}</span>
         <ChevronDown 
@@ -50,7 +50,7 @@ const MobileNavDropdown = ({ label, items, onLinkClick }: MobileNavDropdownProps
               key={index}
               to={item.href}
               onClick={onLinkClick}
-              className="flex items-center gap-3 text-xs sm:text-sm text-foreground/70 hover:text-foreground transition-all duration-300 group p-2.5 sm:p-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-white/10 hover:border-white/20 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5"
+              className="flex items-center gap-3 text-xs sm:text-sm text-foreground/70 hover:text-foreground transition-all duration-300 group p-2.5 sm:p-3 rounded-xl bg-white/60 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-white/10 hover:border-white/20 backdrop-blur-[20px] supports-[backdrop-filter]:bg-white/60"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-primary to-accent opacity-70 group-hover:opacity-100 group-hover:scale-150 transition-all duration-300 flex-shrink-0"></div>
               <span className="font-medium leading-tight">{item.label}</span>
