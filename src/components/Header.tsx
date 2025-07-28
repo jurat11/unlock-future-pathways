@@ -14,29 +14,29 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 group">
             <img 
               src="/lovable-uploads/924fc8c1-9fee-4601-ae97-03ad0311c5ac.png" 
               alt="Unlock Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/about-us" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/about-us" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">
               {t('About Us')}
             </Link>
-            <Link to="/our-team" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/our-team" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">
               {t('Our Team')}
             </Link>
-            <Link to="/programs" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/programs" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">
               {t('Programs')}
             </Link>
-            <Link to="/free-resources" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/free-resources" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">
               {t('Free Resources')}
             </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/contact" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">
               {t('Contact')}
             </Link>
           </nav>
@@ -64,39 +64,39 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t animate-fade-in">
             <nav className="flex flex-col space-y-4">
               <Link 
                 to="/about-us" 
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('About Us')}
               </Link>
               <Link 
                 to="/our-team" 
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Our Team')}
               </Link>
               <Link 
                 to="/programs" 
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Programs')}
               </Link>
               <Link 
                 to="/free-resources" 
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Free Resources')}
               </Link>
               <Link 
                 to="/contact" 
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Contact')}

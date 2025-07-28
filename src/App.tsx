@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import PageTransition from "./components/PageTransition";
 
 const queryClient = new QueryClient();
 
@@ -23,15 +24,15 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/our-team" element={<OurTeam />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/free-resources" element={<FreeResources />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+            <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
+            <Route path="/our-team" element={<PageTransition><OurTeam /></PageTransition>} />
+            <Route path="/programs" element={<PageTransition><Programs /></PageTransition>} />
+            <Route path="/free-resources" element={<PageTransition><FreeResources /></PageTransition>} />
+            <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+            <Route path="/admin" element={<PageTransition><Admin /></PageTransition>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
