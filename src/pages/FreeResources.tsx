@@ -5,11 +5,25 @@ import Contact from "@/components/Contact";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { BookOpen, Video, FileText, Podcast, Download, Clock, Users, PlayCircle } from "lucide-react";
+import { useState } from "react";
+import { BookOpen, Video, FileText, Podcast, Download, Clock, Users, PlayCircle, X } from "lucide-react";
 
 const FreeResources = () => {
   const { t } = useLanguage();
+  const [selectedInsight, setSelectedInsight] = useState<any>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const openInsight = (insight: any) => {
+    setSelectedInsight(insight);
+    setIsDialogOpen(true);
+  };
+
+  const closeInsight = () => {
+    setSelectedInsight(null);
+    setIsDialogOpen(false);
+  };
 
   const courses = [
     {
@@ -138,32 +152,116 @@ const FreeResources = () => {
 
   const insights = [
     {
+      id: 'admissions-trends-2024',
       title: t('2024 Admissions Trends Report'),
       description: t('Comprehensive analysis of the latest admissions trends and what they mean for applicants'),
       publishDate: 'March 2024',
       readTime: '8 min',
-      category: t('Trends Analysis')
+      category: t('Trends Analysis'),
+      content: `
+# 2024 Admissions Trends Report
+
+The college admissions landscape continues to evolve rapidly. This year has brought significant changes that every applicant should understand.
+
+## Key Trends for 2024
+
+### 1. Holistic Review Process
+Colleges are placing increasing emphasis on the whole student, not just test scores and grades.
+
+### 2. Demonstrated Interest
+Many institutions are tracking student engagement more closely than ever before.
+
+### 3. Digital Innovation
+Virtual tours, online interviews, and digital portfolios are becoming standard.
+
+## What This Means for You
+
+Understanding these trends can give you a significant advantage in your application strategy. Focus on authentic engagement and tell your unique story.
+      `
     },
     {
+      id: 'test-optional-policies',
       title: t('The Rise of Test-Optional Policies'),
       description: t('How test-optional policies are changing college admissions and what students should know'),
       publishDate: 'February 2024',
       readTime: '6 min',
-      category: t('Policy Changes')
+      category: t('Policy Changes'),
+      content: `
+# The Rise of Test-Optional Policies
+
+Test-optional admissions have become increasingly common, fundamentally changing how students approach college applications.
+
+## What Does Test-Optional Mean?
+
+Test-optional means you can choose whether or not to submit standardized test scores with your application.
+
+## Should You Submit Scores?
+
+Consider these factors:
+- How do your scores compare to the school's average?
+- Do your scores align with your academic performance?
+- What story do you want your application to tell?
+
+## Strategy Tips
+
+Even in a test-optional world, strong scores can still be beneficial. Focus on putting your best foot forward.
+      `
     },
     {
+      id: 'demonstrated-interest',
       title: t('Demonstrated Interest: Myth vs Reality'),
       description: t('Understanding when and how to show genuine interest in your target colleges'),
       publishDate: 'January 2024',
       readTime: '5 min',
-      category: t('Application Strategy')
+      category: t('Application Strategy'),
+      content: `
+# Demonstrated Interest: Myth vs Reality
+
+Many students wonder if colleges really track their interest. The truth is more nuanced than you might think.
+
+## What Is Demonstrated Interest?
+
+Demonstrated interest refers to the ways students show genuine enthusiasm for a particular college.
+
+## How Colleges Track Interest
+
+- Campus visits (virtual or in-person)
+- Email engagement
+- Information session attendance
+- Social media interaction
+
+## Best Practices
+
+Show genuine interest, not performative engagement. Quality matters more than quantity.
+      `
     },
     {
+      id: 'international-student-spotlight',
       title: t('International Student Spotlight'),
       description: t('Success stories and challenges from international students in US admissions'),
       publishDate: 'December 2023',
       readTime: '10 min',
-      category: t('Student Stories')
+      category: t('Student Stories'),
+      content: `
+# International Student Spotlight
+
+International students face unique challenges in US college admissions. Here are inspiring stories and practical advice.
+
+## Common Challenges
+
+- English language proficiency
+- Understanding the US education system
+- Financial considerations
+- Cultural adaptation
+
+## Success Stories
+
+Meet students who overcame these challenges and thrived in their college journeys.
+
+## Key Advice
+
+Start early, seek guidance, and don't let challenges discourage you from pursuing your dreams.
+      `
     }
   ];
 
@@ -376,7 +474,7 @@ const FreeResources = () => {
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{insight.title}</h3>
                       <p className="text-muted-foreground mb-4">{insight.description}</p>
-                      <Button variant="outline">
+                      <Button variant="outline" onClick={() => openInsight(insight)}>
                         {t('Read More')}
                       </Button>
                     </div>
@@ -395,6 +493,49 @@ const FreeResources = () => {
       </div>
       
       <Footer />
+
+      {/* Blog Modal */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3 mb-2">
+                {selectedInsight && (
+                  <>
+                    <Badge variant="outline">{selectedInsight.category}</Badge>
+                    <span className="text-sm text-muted-foreground">{selectedInsight.publishDate}</span>
+                    <span className="text-sm text-muted-foreground">• {selectedInsight.readTime} {t('read')}</span>
+                  </>
+                )}
+              </div>
+            </div>
+            <DialogTitle className="text-2xl font-bold text-left">
+              {selectedInsight?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-6">
+            {selectedInsight && (
+              <div className="prose prose-lg max-w-none">
+                {selectedInsight.content.split('\n').map((line: string, index: number) => {
+                  if (line.startsWith('# ')) {
+                    return <h1 key={index} className="text-3xl font-bold mt-8 mb-4">{line.substring(2)}</h1>;
+                  } else if (line.startsWith('## ')) {
+                    return <h2 key={index} className="text-2xl font-semibold mt-6 mb-3">{line.substring(3)}</h2>;
+                  } else if (line.startsWith('### ')) {
+                    return <h3 key={index} className="text-xl font-semibold mt-4 mb-2">{line.substring(4)}</h3>;
+                  } else if (line.startsWith('- ')) {
+                    return <li key={index} className="ml-6 mb-1">{line.substring(2)}</li>;
+                  } else if (line.trim() === '') {
+                    return <br key={index} />;
+                  } else {
+                    return <p key={index} className="mb-4 leading-relaxed">{line}</p>;
+                  }
+                })}
+              </div>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
