@@ -6,27 +6,47 @@ interface PageTransitionProps {
 }
 
 const PageTransition = ({ children }: PageTransitionProps) => {
+  const [isExiting, setIsExiting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    // Start exit animation
+    setIsExiting(true);
     setIsVisible(false);
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 50);
+    
+    // Add a brief delay for exit animation then show new content
+    const exitTimer = setTimeout(() => {
+      setIsExiting(false);
+      
+      // Small delay before entrance animation
+      const entranceTimer = setTimeout(() => {
+        setIsVisible(true);
+      }, 100);
+      
+      return () => clearTimeout(entranceTimer);
+    }, 150);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(exitTimer);
   }, [location.pathname]);
 
   return (
-    <div
-      className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible 
-          ? "opacity-100 translate-y-0 scale-100" 
-          : "opacity-0 translate-y-6 scale-98"
-      }`}
-    >
-      {children}
+    <div className="relative overflow-hidden">
+      {/* Exit Overlay */}
+      {isExiting && (
+        <div className="fixed inset-0 bg-background z-50 animate-slide-in-right" />
+      )}
+      
+      {/* Page Content */}
+      <div
+        className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isVisible 
+            ? "opacity-100 translate-y-0 scale-100" 
+            : "opacity-0 translate-y-12 scale-95"
+        }`}
+      >
+        {children}
+      </div>
     </div>
   );
 };

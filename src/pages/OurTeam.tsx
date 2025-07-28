@@ -6,6 +6,9 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Linkedin, Mail, Award } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import StaggeredAnimation from "@/components/StaggeredAnimation";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const OurTeam = () => {
   const { t } = useLanguage();
@@ -72,147 +75,155 @@ const OurTeam = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
-              {t('Meet Our Team')}
-            </Badge>
-            <h1 className="text-5xl font-bold mb-6">
-              {t('Expert Educators & Counselors')}
-            </h1>
-            <p className="text-xl leading-relaxed opacity-90">
-              {t('Our diverse team of experienced professionals brings together decades of expertise in admissions, test preparation, and student counseling.')}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Stats */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-muted-foreground">{t('Years Combined Experience')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">1000+</div>
-              <div className="text-muted-foreground">{t('Students Guided')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground">{t('Ivy League Alumni')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">15+</div>
-              <div className="text-muted-foreground">{t('Countries Represented')}</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Members */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">{t('Our Leadership Team')}</h2>
-              <p className="text-xl text-muted-foreground">
-                {t('Get to know the experienced professionals who will guide your educational journey')}
+      <AnimatedSection animation="fade-up">
+        <section className="bg-gradient-hero py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
+                {t('Meet Our Team')}
+              </Badge>
+              <h1 className="text-5xl font-bold mb-6">
+                {t('Expert Educators & Counselors')}
+              </h1>
+              <p className="text-xl leading-relaxed opacity-90">
+                {t('Our diverse team of experienced professionals brings together decades of expertise in admissions, test preparation, and student counseling.')}
               </p>
             </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-elegant transition-shadow">
-                  <div className="aspect-square relative overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-3">{member.role}</p>
+      {/* Team Stats */}
+      <AnimatedSection animation="fade-up" delay={200}>
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <StaggeredAnimation staggerDelay={150} className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+              <div>
+                <AnimatedCounter end={50} suffix="+" className="text-4xl font-bold text-primary mb-2" />
+                <div className="text-muted-foreground">{t('Years Combined Experience')}</div>
+              </div>
+              <div>
+                <AnimatedCounter end={1000} suffix="+" className="text-4xl font-bold text-primary mb-2" />
+                <div className="text-muted-foreground">{t('Students Guided')}</div>
+              </div>
+              <div>
+                <AnimatedCounter end={8} className="text-4xl font-bold text-primary mb-2" />
+                <div className="text-muted-foreground">{t('Ivy League Alumni')}</div>
+              </div>
+              <div>
+                <AnimatedCounter end={15} suffix="+" className="text-4xl font-bold text-primary mb-2" />
+                <div className="text-muted-foreground">{t('Countries Represented')}</div>
+              </div>
+            </StaggeredAnimation>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Team Members */}
+      <AnimatedSection animation="fade-up" delay={400}>
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-6">{t('Our Leadership Team')}</h2>
+                <p className="text-xl text-muted-foreground">
+                  {t('Get to know the experienced professionals who will guide your educational journey')}
+                </p>
+              </div>
+
+              <StaggeredAnimation staggerDelay={200} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {teamMembers.map((member, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                    <div className="aspect-square relative overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
                     
-                    <div className="space-y-2 mb-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Award className="w-4 h-4 text-muted-foreground" />
-                        <span className="text-muted-foreground">{member.education}</span>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                      <p className="text-primary font-semibold mb-3">{member.role}</p>
+                      
+                      <div className="space-y-2 mb-4 text-sm">
+                        <div className="flex items-center gap-2">
+                          <Award className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">{member.education}</span>
+                        </div>
+                        <div className="text-muted-foreground">{member.experience}</div>
                       </div>
-                      <div className="text-muted-foreground">{member.experience}</div>
-                    </div>
 
-                    <div className="mb-4">
-                      <div className="flex flex-wrap gap-1">
-                        {member.specialties.map((specialty, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs">
-                            {specialty}
-                          </Badge>
-                        ))}
+                      <div className="mb-4">
+                        <div className="flex flex-wrap gap-1">
+                          {member.specialties.map((specialty, idx) => (
+                            <Badge key={idx} variant="secondary" className="text-xs">
+                              {specialty}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                        {member.bio}
+                      </p>
+
+                      <div className="flex gap-2">
+                        <button className="p-2 rounded-md hover:bg-muted transition-colors hover:scale-105 duration-200">
+                          <Linkedin className="w-4 h-4" />
+                        </button>
+                        <button className="p-2 rounded-md hover:bg-muted transition-colors hover:scale-105 duration-200">
+                          <Mail className="w-4 h-4" />
+                        </button>
                       </div>
                     </div>
-
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                      {member.bio}
-                    </p>
-
-                    <div className="flex gap-2">
-                      <button className="p-2 rounded-md hover:bg-muted transition-colors">
-                        <Linkedin className="w-4 h-4" />
-                      </button>
-                      <button className="p-2 rounded-md hover:bg-muted transition-colors">
-                        <Mail className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                ))}
+              </StaggeredAnimation>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Advisory Board */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">{t('Advisory Board')}</h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              {t('We\'re proud to have guidance from distinguished leaders in education and industry')}
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Prof. Jennifer Adams",
-                  role: t('Former Dean, Princeton University'),
-                  expertise: t('Higher Education Policy')
-                },
-                {
-                  name: "Robert Martinez",
-                  role: t('Former CEO, ETS'),
-                  expertise: t('Educational Assessment')
-                },
-                {
-                  name: "Dr. Angela Foster",
-                  role: t('Research Director, College Board'),
-                  expertise: t('Student Success Research')
-                }
-              ].map((advisor, index) => (
-                <Card key={index} className="p-6 text-center">
-                  <h3 className="font-semibold text-lg mb-2">{advisor.name}</h3>
-                  <p className="text-primary text-sm mb-2">{advisor.role}</p>
-                  <p className="text-muted-foreground text-sm">{advisor.expertise}</p>
-                </Card>
-              ))}
+      <AnimatedSection animation="fade-up" delay={600}>
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold mb-8">{t('Advisory Board')}</h2>
+              <p className="text-xl text-muted-foreground mb-12">
+                {t('We\'re proud to have guidance from distinguished leaders in education and industry')}
+              </p>
+              
+              <StaggeredAnimation staggerDelay={200} className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: "Prof. Jennifer Adams",
+                    role: t('Former Dean, Princeton University'),
+                    expertise: t('Higher Education Policy')
+                  },
+                  {
+                    name: "Robert Martinez",
+                    role: t('Former CEO, ETS'),
+                    expertise: t('Educational Assessment')
+                  },
+                  {
+                    name: "Dr. Angela Foster",
+                    role: t('Research Director, College Board'),
+                    expertise: t('Student Success Research')
+                  }
+                ].map((advisor, index) => (
+                  <Card key={index} className="p-6 text-center hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                    <h3 className="font-semibold text-lg mb-2">{advisor.name}</h3>
+                    <p className="text-primary text-sm mb-2">{advisor.role}</p>
+                    <p className="text-muted-foreground text-sm">{advisor.expertise}</p>
+                  </Card>
+                ))}
+              </StaggeredAnimation>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       <ConsultationCTA />
       

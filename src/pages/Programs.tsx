@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { GraduationCap, Clock, Users, Star, CheckCircle, Calendar } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import StaggeredAnimation from "@/components/StaggeredAnimation";
+import AnimatedCard from "@/components/AnimatedCard";
 
 const Programs = () => {
   const { t } = useLanguage();
@@ -107,36 +110,39 @@ const Programs = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
-              {t('Our Programs')}
-            </Badge>
-            <h1 className="text-5xl font-bold mb-6">
-              {t('Comprehensive University Preparation Programs')}
-            </h1>
-            <p className="text-xl leading-relaxed opacity-90">
-              {t('Multi-year programs designed to guide students from middle school through successful university admission and beyond.')}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Programs */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">{t('Flagship Programs')}</h2>
-              <p className="text-xl text-muted-foreground">
-                {t('Long-term, comprehensive programs that provide end-to-end support for university admission success')}
+      <AnimatedSection animation="fade-up">
+        <section className="bg-gradient-hero py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
+                {t('Our Programs')}
+              </Badge>
+              <h1 className="text-5xl font-bold mb-6">
+                {t('Comprehensive University Preparation Programs')}
+              </h1>
+              <p className="text-xl leading-relaxed opacity-90">
+                {t('Multi-year programs designed to guide students from middle school through successful university admission and beyond.')}
               </p>
             </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              {programs.map((program, index) => (
-                <Card key={index} className={`overflow-hidden ${program.featured ? 'ring-2 ring-primary shadow-glow' : ''}`}>
+      {/* Main Programs */}
+      <AnimatedSection animation="fade-up" delay={200}>
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-6">{t('Flagship Programs')}</h2>
+                <p className="text-xl text-muted-foreground">
+                  {t('Long-term, comprehensive programs that provide end-to-end support for university admission success')}
+                </p>
+              </div>
+
+              <StaggeredAnimation staggerDelay={200} className="grid lg:grid-cols-2 gap-8">
+                {programs.map((program, index) => (
+                  <Card key={index} className={`overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${program.featured ? 'ring-2 ring-primary shadow-glow' : ''}`}>
                   {program.featured && (
                     <div className="bg-primary text-primary-foreground px-4 py-2 text-center font-semibold">
                       {t('Most Popular Program')}
@@ -210,27 +216,29 @@ const Programs = () => {
                       </Button>
                     </div>
                   </div>
-                </Card>
-              ))}
+                  </Card>
+                ))}
+              </StaggeredAnimation>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Additional Programs */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">{t('Specialized Programs')}</h2>
-              <p className="text-xl text-muted-foreground">
-                {t('Targeted programs for specific needs and circumstances')}
-              </p>
-            </div>
+      <AnimatedSection animation="fade-up" delay={400}>
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-6">{t('Specialized Programs')}</h2>
+                <p className="text-xl text-muted-foreground">
+                  {t('Targeted programs for specific needs and circumstances')}
+                </p>
+              </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {additionalPrograms.map((program, index) => (
-                <Card key={index} className="p-6 hover:shadow-elegant transition-shadow">
+              <StaggeredAnimation staggerDelay={150} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {additionalPrograms.map((program, index) => (
+                  <Card key={index} className="p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                   <Badge variant="outline" className="mb-4">{program.type}</Badge>
                   <h3 className="text-lg font-semibold mb-3">{program.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{program.description}</p>
@@ -241,53 +249,56 @@ const Programs = () => {
                   <Button variant="outline" size="sm" onClick={scrollToConsultation}>
                     {t('Learn More')}
                   </Button>
-                </Card>
-              ))}
+                  </Card>
+                ))}
+              </StaggeredAnimation>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Program Features */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-12">{t('Why Choose UNLOCK Programs?')}</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t('Small Cohorts')}</h3>
-                <p className="text-muted-foreground">
-                  {t('Intimate group sizes ensure personalized attention and strong peer relationships')}
-                </p>
-              </div>
+      <AnimatedSection animation="fade-up" delay={600}>
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold mb-12">{t('Why Choose UNLOCK Programs?')}</h2>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="w-8 h-8 text-primary" />
+              <StaggeredAnimation staggerDelay={200} className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-transform hover:scale-110 duration-300">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{t('Small Cohorts')}</h3>
+                  <p className="text-muted-foreground">
+                    {t('Intimate group sizes ensure personalized attention and strong peer relationships')}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{t('Expert Mentorship')}</h3>
-                <p className="text-muted-foreground">
-                  {t('Direct access to experienced counselors and industry professionals')}
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-primary" />
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-transform hover:scale-110 duration-300">
+                    <GraduationCap className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{t('Expert Mentorship')}</h3>
+                  <p className="text-muted-foreground">
+                    {t('Direct access to experienced counselors and industry professionals')}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{t('Proven Results')}</h3>
-                <p className="text-muted-foreground">
-                  {t('Track record of successful admissions to top universities worldwide')}
-                </p>
-              </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-transform hover:scale-110 duration-300">
+                    <Star className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{t('Proven Results')}</h3>
+                  <p className="text-muted-foreground">
+                    {t('Track record of successful admissions to top universities worldwide')}
+                  </p>
+                </div>
+              </StaggeredAnimation>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       <ConsultationCTA />
       
