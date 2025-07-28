@@ -77,7 +77,7 @@ const NavDropdown = ({ label, items, className }: NavDropdownProps) => {
             : "opacity-0 translate-y-3 scale-95 pointer-events-none"
         )}
       >
-        <div className="p-2 space-y-1">
+        <div className="p-2 space-y-1 bg-opacity-20">
           {items.map((item, index) => (
             <Link
               key={index}
