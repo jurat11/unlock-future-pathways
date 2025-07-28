@@ -80,7 +80,9 @@ export default {
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'soft': 'var(--shadow-soft)',
+				'dropdown': 'var(--shadow-dropdown)'
 			},
 			keyframes: {
 				'accordion-down': {

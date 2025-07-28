@@ -166,8 +166,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t animate-fade-in bg-background/95 backdrop-blur-md">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in bg-gradient-to-b from-background/95 to-background/90 backdrop-blur-xl shadow-2xl rounded-b-2xl mx-4 mb-4 border-x border-b border-border/30">
+            <nav className="flex flex-col space-y-4 px-4">
               <MobileNavDropdown 
                 label={t('About Us')} 
                 items={aboutDropdownItems}
@@ -185,7 +185,7 @@ const Header = () => {
               />
               <Link 
                 to="/free-resources" 
-                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105"
+                className="text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-4 hover:scale-105 p-3 rounded-xl bg-background/50 hover:bg-primary/10 border border-transparent hover:border-primary/20 hover:shadow-lg font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Free Resources')}
@@ -195,12 +195,12 @@ const Header = () => {
                 items={contactDropdownItems}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
-              <div className="flex items-center gap-3 pt-4 border-t border-border/50">
+              <div className="flex items-center gap-3 pt-6 border-t border-primary/20 mt-6">
                 <LanguageToggle />
                 <Button 
                   variant="hero" 
                   size="sm" 
-                  className="w-fit"
+                  className="w-fit shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => {
                     setIsMenuOpen(false);
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

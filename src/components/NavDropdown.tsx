@@ -54,42 +54,43 @@ const NavDropdown = ({ label, items, className }: NavDropdownProps) => {
       {/* Trigger Button */}
       <button
         className={cn(
-          "flex items-center gap-1 text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative group",
+          "flex items-center gap-1 text-foreground hover:text-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 relative group px-3 py-2 rounded-lg hover:bg-primary/5",
           className
         )}
       >
-        <span>{label}</span>
+        <span className="font-medium">{label}</span>
         <ChevronDown 
           className={cn(
-            "w-4 h-4 transition-transform duration-300",
-            isOpen && "rotate-180"
+            "w-4 h-4 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            isOpen && "rotate-180 text-primary"
           )} 
         />
-        <div className="absolute w-0 h-0.5 bg-primary left-0 -bottom-1 transition-all duration-300 group-hover:w-full" />
+        <div className="absolute w-0 h-0.5 bg-gradient-primary left-3 -bottom-1 transition-all duration-300 group-hover:w-[calc(100%-24px)] rounded-full" />
       </button>
 
       {/* Dropdown Menu */}
       <div
         className={cn(
-          "absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-elegant transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-          "z-[100]", // High z-index to prevent transparency issues
+          "absolute top-full left-0 mt-3 w-72 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "z-[100] before:content-[''] before:absolute before:-top-1 before:left-6 before:w-3 before:h-3 before:bg-background/95 before:border-l before:border-t before:border-border/50 before:rotate-45 before:backdrop-blur-xl",
           isOpen 
             ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" 
             : "opacity-0 translate-y-2 scale-95 pointer-events-none"
         )}
       >
-        <div className="py-2">
+        <div className="py-3 relative z-10 bg-background/90 rounded-xl backdrop-blur-sm">
           {items.map((item, index) => (
             <Link
               key={index}
               to={item.href}
-              className="block px-4 py-3 hover:bg-muted/50 transition-colors duration-200 group"
+              className="block px-5 py-3 hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 transition-all duration-200 group mx-2 rounded-lg border border-transparent hover:border-primary/20 hover:shadow-lg"
             >
-              <div className="font-medium text-foreground group-hover:text-primary transition-colors">
+              <div className="font-semibold text-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary/30 group-hover:bg-primary group-hover:scale-125 transition-all duration-200"></div>
                 {item.label}
               </div>
               {item.description && (
-                <div className="text-sm text-muted-foreground mt-1">
+                <div className="text-sm text-muted-foreground mt-1 ml-4 group-hover:text-foreground/80 transition-colors duration-200">
                   {item.description}
                 </div>
               )}
