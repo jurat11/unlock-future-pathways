@@ -14,37 +14,37 @@ const AnimatedSection = forwardRef<HTMLElement, AnimatedSectionProps>(
     const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
     const getAnimationClasses = () => {
-      const baseClasses = `transition-all ease-out`;
-      const durationClass = `duration-${duration}`;
+      const baseClasses = `transition-all ease-[cubic-bezier(0.16,1,0.3,1)]`;
+      const durationClass = `duration-[800ms]`;
       
       switch (animation) {
         case "fade-up":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-95"
           }`;
         case "fade-down":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+            isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-12 scale-95"
           }`;
         case "fade-left":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            isVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-12 scale-95"
           }`;
         case "fade-right":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            isVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-12 scale-95"
           }`;
         case "scale":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
           }`;
         case "slide-up":
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "translate-y-0" : "translate-y-full"
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-70"
           }`;
         default:
           return `${baseClasses} ${durationClass} ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-95"
           }`;
       }
     };

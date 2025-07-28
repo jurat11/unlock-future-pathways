@@ -21,10 +21,10 @@ const StaggeredAnimation = ({
         if (!isValidElement(child)) return child;
 
         const delay = index * staggerDelay;
-        const animationClasses = `transition-all duration-500 ease-out ${
+        const animationClasses = `transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible 
-            ? "opacity-100 translate-y-0" 
-            : "opacity-0 translate-y-4"
+            ? "opacity-100 translate-y-0 scale-100" 
+            : "opacity-0 translate-y-8 scale-95"
         }`;
 
         return cloneElement(child, {

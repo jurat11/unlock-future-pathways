@@ -20,10 +20,10 @@ const PageTransition = ({ children }: PageTransitionProps) => {
 
   return (
     <div
-      className={`transition-all duration-500 ease-out ${
+      className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
         isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-4"
+          ? "opacity-100 translate-y-0 scale-100" 
+          : "opacity-0 translate-y-6 scale-98"
       }`}
     >
       {children}

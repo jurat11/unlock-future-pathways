@@ -48,12 +48,12 @@ const Hero = () => {
             {/* CTA Buttons */}
             <AnimatedSection animation="fade-up" delay={800}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform" onClick={() => document.getElementById('accepted-program')?.scrollIntoView({
+                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-glow" onClick={() => document.getElementById('accepted-program')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
                   {t('hero.cta')}
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform" onClick={() => document.getElementById('contact')?.scrollIntoView({
+                <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-elegant" onClick={() => document.getElementById('contact')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
                   {t('hero.consultation')}
@@ -68,19 +68,19 @@ const Hero = () => {
           {/* Hero Image */}
           <AnimatedSection animation="fade-left" delay={400}>
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-elegant hover:shadow-glow transition-shadow duration-500">
-                <img src={heroImage} alt="Students learning together" className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105" />
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant hover:shadow-glow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105">
+                <img src={heroImage} alt="Students learning together" className="w-full h-auto object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
               </div>
               
               {/* Floating Card */}
               <AnimatedSection animation="slide-up" delay={1200}>
-                <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow hover:shadow-elegant transition-shadow duration-300">
+                <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow hover:shadow-elegant transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm text-muted-foreground">{t('hero.card.text')}</p>
                     </div>
-                    <Button variant="hero" size="sm" className="hover:scale-105 transition-transform" onClick={() => document.getElementById('contact')?.scrollIntoView({
+                    <Button variant="hero" size="sm" className="hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" onClick={() => document.getElementById('contact')?.scrollIntoView({
                     behavior: 'smooth'
                   })}>
                       {t('hero.card.cta')}
