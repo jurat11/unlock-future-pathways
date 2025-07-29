@@ -8,61 +8,47 @@ import StaggeredAnimation from "@/components/StaggeredAnimation";
 const Hero = () => {
   const { t } = useLanguage();
   
-  return <section className="relative overflow-hidden bg-gradient-hero">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-pattern opacity-5"></div>
-      <div className="absolute top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+  return <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* University Background */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          alt="University Campus" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
-          {/* Content - Takes more space */}
-          <div className="lg:col-span-7 space-y-8 text-white">
-            <AnimatedSection animation="fade-up" delay={100}>
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-4xl">
+          <AnimatedSection animation="fade-up" delay={100}>
+            <div className="space-y-8">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-1 bg-white/80 rounded-full"></div>
-                  <span className="text-white/90 font-medium tracking-wide uppercase text-sm">
-                    {t('Transform Your Future')}
+                  <div className="w-16 h-1 bg-primary rounded-full"></div>
+                  <span className="text-white/90 font-semibold tracking-wider uppercase text-sm">
+                    {t('Elite University Prep')}
                   </span>
                 </div>
                 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
                   {t('hero.title')}
-                  <span className="block mt-3 bg-gradient-to-r from-white to-primary-glow bg-clip-text text-transparent">
+                  <span className="block mt-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                     {t('hero.title.accepted')}
                   </span>
                 </h1>
                 
-                <p className="text-xl lg:text-2xl leading-relaxed text-white/90 max-w-2xl">
+                <p className="text-xl lg:text-2xl leading-relaxed text-white/90 max-w-3xl">
                   {t('hero.subtitle')}
                 </p>
               </div>
-            </AnimatedSection>
 
-            {/* Enhanced Features Grid */}
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="grid sm:grid-cols-2 gap-4 my-8">
-                {[
-                  { icon: CheckCircle, text: t('hero.feature1') },
-                  { icon: CheckCircle, text: t('hero.feature2') },
-                  { icon: CheckCircle, text: t('hero.feature3') },
-                  { icon: CheckCircle, text: t('hero.feature4') }
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20">
-                    <feature.icon className="text-white h-5 w-5 flex-shrink-0" />
-                    <span className="text-white font-medium text-sm">{feature.text}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            {/* CTA Buttons */}
-            <AnimatedSection animation="fade-up" delay={300}>
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-4 bg-white text-primary hover:bg-white/90 shadow-elegant hover:shadow-glow font-semibold" 
+                  className="text-lg px-10 py-5 bg-primary text-white hover:bg-primary/90 shadow-glow font-semibold" 
                   onClick={() => document.getElementById('accepted-program')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t('hero.cta')}
@@ -70,67 +56,79 @@ const Hero = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" 
+                  className="text-lg px-10 py-5 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm" 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t('hero.consultation')}
                 </Button>
               </div>
-            </AnimatedSection>
 
-            {/* Quick Stats */}
-            <AnimatedSection animation="fade-up" delay={400}>
-              <div className="flex gap-8 pt-8 border-t border-white/20">
+              {/* Achievement Stats */}
+              <div className="grid grid-cols-3 gap-8 pt-12 border-t border-white/20">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">95%</div>
-                  <div className="text-white/80 text-sm">{t('Success Rate')}</div>
+                  <div className="text-4xl font-bold text-white mb-1">95%</div>
+                  <div className="text-white/80 text-sm font-medium">{t('Acceptance Rate')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">2.5K+</div>
-                  <div className="text-white/80 text-sm">{t('Students Helped')}</div>
+                  <div className="text-4xl font-bold text-white mb-1">2.5K+</div>
+                  <div className="text-white/80 text-sm font-medium">{t('Students Placed')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">50+</div>
-                  <div className="text-white/80 text-sm">{t('Partner Schools')}</div>
+                  <div className="text-4xl font-bold text-white mb-1">$50M+</div>
+                  <div className="text-white/80 text-sm font-medium">{t('Scholarships Won')}</div>
                 </div>
               </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Image Side - Smaller but more impactful */}
-          <div className="lg:col-span-5">
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="relative">
-                {/* Main Image */}
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                  <img src={heroImage} alt="Students learning together" className="w-full h-auto object-cover" />
-                  <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
-                </div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-elegant">
-                  <div className="flex items-center gap-3">
-                    <Award className="w-6 h-6 text-primary" />
-                    <div>
-                      <div className="text-sm font-bold text-foreground">Top Rated</div>
-                      <div className="text-xs text-muted-foreground">4.9★ Reviews</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-elegant">
-                  <div className="flex items-center gap-3">
-                    <Users className="w-6 h-6 text-accent" />
-                    <div>
-                      <div className="text-sm font-bold text-foreground">Live Support</div>
-                      <div className="text-xs text-muted-foreground">24/7 Available</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
+
+        {/* University Logos Carousel */}
+        <AnimatedSection animation="fade-up" delay={400}>
+          <div className="absolute bottom-8 left-0 right-0">
+            <div className="container mx-auto px-4">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                <p className="text-white/80 text-center text-sm font-medium mb-6">
+                  {t('Our students have been accepted to top universities including:')}
+                </p>
+                <div className="flex items-center justify-center gap-8 lg:gap-12 overflow-hidden">
+                  <div className="flex animate-scroll gap-8 lg:gap-12">
+                    {/* Harvard */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-red-700 font-bold text-xs">HARVARD</span>
+                    </div>
+                    {/* MIT */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-800 font-bold text-xs">MIT</span>
+                    </div>
+                    {/* Stanford */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-red-600 font-bold text-xs">STANFORD</span>
+                    </div>
+                    {/* Yale */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-blue-800 font-bold text-xs">YALE</span>
+                    </div>
+                    {/* Princeton */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-orange-600 font-bold text-xs">PRINCETON</span>
+                    </div>
+                    {/* Columbia */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-blue-700 font-bold text-xs">COLUMBIA</span>
+                    </div>
+                    {/* Repeat for smooth loop */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-red-700 font-bold text-xs">HARVARD</span>
+                    </div>
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/90 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-800 font-bold text-xs">MIT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>;
 };
