@@ -183,7 +183,7 @@ const Contact = () => {
                 />
               </div>
               <Button 
-                variant="hero" 
+                variant="default" 
                 size="lg" 
                 className="w-full"
                 onClick={handleSubmit}

@@ -8,18 +8,18 @@ import StaggeredAnimation from "@/components/StaggeredAnimation";
 const Hero = () => {
   const { t } = useLanguage();
   
-  return <section className="relative min-h-screen flex items-center bg-gradient-subtle">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  return <section className="relative py-20 lg:py-32 bg-gradient-subtle">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <AnimatedSection animation="fade-up" delay={100}>
+              <div className="space-y-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
                   {t('hero.title')}
-                  <span className="text-primary block">{t('hero.title.accepted')}</span>
+                  <span className="text-primary block mt-2">{t('hero.title.accepted')}</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                   {t('hero.subtitle')}
                 </p>
               </div>
@@ -46,14 +46,14 @@ const Hero = () => {
             </StaggeredAnimation>
 
             {/* CTA Buttons */}
-            <AnimatedSection animation="fade-up" delay={800}>
+            <AnimatedSection animation="fade-up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-glow" onClick={() => document.getElementById('accepted-program')?.scrollIntoView({
+                <Button variant="default" size="lg" className="text-lg px-8 py-4 shadow-elegant hover:shadow-glow" onClick={() => document.getElementById('accepted-program')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
                   {t('hero.cta')}
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-elegant" onClick={() => document.getElementById('contact')?.scrollIntoView({
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4 hover:bg-secondary/50" onClick={() => document.getElementById('contact')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
                   {t('hero.consultation')}
@@ -66,21 +66,21 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <AnimatedSection animation="fade-left" delay={400}>
+          <AnimatedSection animation="fade-up" delay={200}>
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-elegant hover:shadow-glow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105">
-                <img src={heroImage} alt="Students learning together" className="w-full h-auto object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
+              <div className="relative overflow-hidden rounded-xl shadow-elegant">
+                <img src={heroImage} alt="Students learning together" className="w-full h-auto object-cover" />
+                <div className="absolute inset-0 bg-gradient-primary opacity-5"></div>
               </div>
               
               {/* Floating Card */}
-              <AnimatedSection animation="slide-up" delay={1200}>
-                <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur shadow-glow hover:shadow-elegant transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105">
+              <AnimatedSection animation="fade-up" delay={400}>
+                <Card className="absolute bottom-6 left-6 right-6 p-6 bg-background/95 backdrop-blur-sm shadow-soft border border-border">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-muted-foreground">{t('hero.card.text')}</p>
+                      <p className="text-sm text-muted-foreground font-medium">{t('hero.card.text')}</p>
                     </div>
-                    <Button variant="hero" size="sm" className="hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" onClick={() => document.getElementById('contact')?.scrollIntoView({
+                    <Button variant="default" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({
                     behavior: 'smooth'
                   })}>
                       {t('hero.card.cta')}

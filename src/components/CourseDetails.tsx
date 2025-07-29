@@ -147,9 +147,9 @@ const CourseDetails = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button 
-                  variant="hero" 
+                  variant="default" 
                   size="lg" 
-                  className="w-full" 
+                  className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t('course.pricing.apply')}

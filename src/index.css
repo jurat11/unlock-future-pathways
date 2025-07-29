@@ -9,47 +9,48 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 26% 14%;
+    --foreground: 213 12% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 26% 14%;
+    --card-foreground: 213 12% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
+    --popover-foreground: 213 12% 27%;
 
-    --primary: 18 80% 52%;
-    --primary-foreground: 42 77% 96%;
-    --primary-glow: 18 80% 65%;
+    /* Professional, trustworthy color palette */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 84% 70%;
 
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 8% 97%;
+    --secondary-foreground: 213 12% 27%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 210 8% 97%;
+    --muted-foreground: 213 8% 51%;
 
-    --accent: 217 91% 43%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 43%;
+    --border: 214 20% 91%;
+    --input: 214 20% 91%;
+    --ring: 214 84% 56%;
 
-    --success: 142 76% 36%;
+    --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Gradients */
+    /* Refined gradients - less aggressive */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 35%));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 14% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(214 60% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(210 8% 98%));
 
-    /* Shadows */
-    --shadow-elegant: 0 20px 40px -12px hsl(var(--primary) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-    --shadow-soft: 0 4px 16px -4px hsl(var(--foreground) / 0.1);
-    --shadow-dropdown: 0 25px 50px -12px hsl(var(--foreground) / 0.25);
+    /* Softer, more professional shadows */
+    --shadow-elegant: 0 8px 25px -5px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 4px 20px hsl(var(--primary-glow) / 0.2);
+    --shadow-soft: 0 2px 10px -2px hsl(var(--foreground) / 0.08);
+    --shadow-dropdown: 0 10px 30px -5px hsl(var(--foreground) / 0.15);
 
     --radius: 0.5rem;
 

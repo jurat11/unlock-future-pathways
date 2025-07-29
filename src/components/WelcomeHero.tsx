@@ -17,36 +17,35 @@ const WelcomeHero = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-gradient-hero">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-hero"></div>
-      <div className="absolute inset-0 bg-pattern opacity-30 animate-pulse"></div>
+      <div className="absolute inset-0 bg-pattern opacity-10"></div>
       
       {/* Main Content */}
       <div className="relative z-10 py-24 lg:py-32">
         <div className="container mx-auto px-4">
-          <AnimatedSection animation="fade-up" delay={200}>
+          <AnimatedSection animation="fade-up" delay={100}>
             <div className="max-w-4xl mx-auto text-center text-white">
-              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
                 <Heart className="w-4 h-4 mr-2" />
                 {t("Always Here to Help")}
               </Badge>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 {t("We Believe in")} 
-                <span className="block bg-gradient-to-r from-white to-primary-foreground bg-clip-text text-transparent">
+                <span className="block text-white/95 mt-2">
                   {t("Open Education")}
                 </span>
               </h1>
               
-              <p className="text-xl lg:text-2xl leading-relaxed opacity-90 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg lg:text-xl leading-relaxed text-white/90 mb-8 max-w-3xl mx-auto">
                 {t("At UNLOCK, we're committed to democratizing quality education. Every student deserves access to the best resources, guidance, and opportunities to achieve their dreams.")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 shadow-glow"
+                  className="bg-white text-primary hover:bg-white/90 shadow-elegant"
                   onClick={() => document.getElementById('resource-gallery')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t("Explore Free Resources")}
@@ -54,7 +53,7 @@ const WelcomeHero = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  className="border-white/30 text-white hover:bg-white/10"
                   onClick={() => document.getElementById('free-consultation')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t("Get Free Consultation")}
@@ -65,24 +64,24 @@ const WelcomeHero = () => {
 
           {/* Animated Stats */}
           <div ref={statsRef as any} className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div 
                     key={index}
-                    className={`transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    className={`transform transition-all duration-500 ${
                       statsVisible 
-                        ? 'opacity-100 translate-y-0 scale-100' 
-                        : 'opacity-0 translate-y-8 scale-95'
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
                     }`}
                     style={{ transitionDelay: `${stat.delay}ms` }}
                   >
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Icon className="w-6 h-6 text-white" />
+                    <div className="bg-white/10 rounded-xl p-6 border border-white/20">
+                      <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <Icon className="w-5 h-5 text-white" />
                       </div>
-                      <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-2">
                         {stat.value}
                       </div>
                       <div className="text-white/80 text-sm font-medium">

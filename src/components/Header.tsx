@@ -106,7 +106,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/5 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 border-b border-white/30 transition-all duration-300 ease-out">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -133,7 +133,7 @@ const Header = () => {
               items={programsDropdownItems.map(item => ({ label: item.label, href: item.href }))}
             />
             <FreeResourcesHoverCard>
-              <Link to="/free-resources" className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-all duration-500 ease-out relative group px-4 py-2.5 rounded-full hover:bg-white/10 backdrop-blur-md">
+              <Link to="/free-resources" className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-all duration-300 px-4 py-2.5 rounded-md hover:bg-secondary/50">
                 {t('Free Resources')}
               </Link>
             </FreeResourcesHoverCard>
@@ -147,9 +147,9 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-3">
             <LanguageToggle />
             <Button 
-              variant="hero" 
+              variant="default" 
               size="sm"
-              className="backdrop-blur-md bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-glow transition-all duration-400"
+              className="shadow-elegant hover:shadow-glow"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.cta')}
@@ -158,7 +158,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-md"
+            className="md:hidden p-2 rounded-md hover:bg-secondary/50 transition-all duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground/80" />}
@@ -167,7 +167,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 sm:py-6 border-t border-white/10 animate-fade-in bg-white/5 backdrop-blur-[50px] supports-[backdrop-filter]:bg-white/5 shadow-2xl rounded-b-3xl mx-2 mb-4 border-x border-b border-white/30">
+          <div className="md:hidden py-4 border-t border-border bg-background shadow-dropdown rounded-b-lg animate-fade-in">
             <nav className="flex flex-col space-y-2 sm:space-y-3 px-3 sm:px-4">
               <MobileNavDropdown 
                 label={t('About Us')} 
@@ -186,7 +186,7 @@ const Header = () => {
               />
               <Link 
                 to="/free-resources" 
-                className="text-foreground/80 hover:text-foreground transition-all duration-400 ease-out p-3 sm:p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 backdrop-blur-[40px] supports-[backdrop-filter]:bg-white/5 font-medium text-sm sm:text-base leading-tight"
+                className="text-foreground/80 hover:text-foreground transition-all duration-200 p-3 rounded-md bg-secondary/30 hover:bg-secondary/50 border border-border font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('Free Resources')}
@@ -196,12 +196,12 @@ const Header = () => {
                 items={contactDropdownItems.map(item => ({ label: item.label, href: item.href }))}
                 onLinkClick={() => setIsMenuOpen(false)}
               />
-              <div className="flex items-center gap-3 pt-6 border-t border-white/20 mt-6">
+              <div className="flex items-center gap-3 pt-6 border-t border-border mt-6">
                 <LanguageToggle />
                 <Button 
-                  variant="hero" 
+                  variant="default" 
                   size="sm" 
-                  className="w-fit shadow-2xl hover:shadow-glow transition-all duration-400 backdrop-blur-md bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  className="shadow-elegant hover:shadow-glow"
                   onClick={() => {
                     setIsMenuOpen(false);
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
