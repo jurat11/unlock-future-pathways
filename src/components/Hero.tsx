@@ -92,7 +92,7 @@ const Hero = () => {
       <section className="py-16 bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="fade-up" delay={200}>
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border shadow-elegant">
+            <div>
               <p className="text-muted-foreground text-center text-sm font-medium mb-8">
                 {t('Our students have been accepted to top universities including:')}
               </p>
