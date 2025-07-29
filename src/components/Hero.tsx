@@ -5,6 +5,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-education.jpg";
 import AnimatedSection from "@/components/AnimatedSection";
 import StaggeredAnimation from "@/components/StaggeredAnimation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -90,41 +96,75 @@ const Hero = () => {
               <p className="text-muted-foreground text-center text-sm font-medium mb-8">
                 {t('Our students have been accepted to top universities including:')}
               </p>
-              <div className="flex items-center justify-center gap-8 lg:gap-12 overflow-hidden">
-                <div className="flex animate-scroll gap-8 lg:gap-12">
-                  {/* Harvard */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-red-700 font-bold text-xs">HARVARD</span>
-                  </div>
-                  {/* MIT */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-foreground font-bold text-xs">MIT</span>
-                  </div>
-                  {/* Stanford */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-red-600 font-bold text-xs">STANFORD</span>
-                  </div>
-                  {/* Yale */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-blue-800 font-bold text-xs">YALE</span>
-                  </div>
-                  {/* Princeton */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-orange-600 font-bold text-xs">PRINCETON</span>
-                  </div>
-                  {/* Columbia */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-blue-700 font-bold text-xs">COLUMBIA</span>
-                  </div>
-                  {/* Repeat for smooth loop */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-red-700 font-bold text-xs">HARVARD</span>
-                  </div>
-                  <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
-                    <span className="text-foreground font-bold text-xs">MIT</span>
-                  </div>
-                </div>
-              </div>
+              <Carousel
+                plugins={[
+                  Autoplay({
+                    delay: 2000,
+                  }),
+                ]}
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-4xl mx-auto"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/5c017224-1f38-454c-9374-621edfa03086.png" 
+                        alt="Harvard University" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/5e81cc66-2bff-49e5-a2a7-60004ad433d6.png" 
+                        alt="University of Chicago" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/51f0f87b-270c-4b54-adf3-598f29efee8d.png" 
+                        alt="Columbia University" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/32a4bd60-ed19-4188-b89b-d9b8cbf24bfd.png" 
+                        alt="Yale University" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/9ccd516d-c245-48eb-8999-27f5dcc701a9.png" 
+                        alt="MIT" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="flex-shrink-0 w-20 h-20 bg-background rounded-xl flex items-center justify-center shadow-sm border border-border">
+                      <img 
+                        src="/lovable-uploads/6c19ad5f-715b-48d5-bf86-d0ddc58916e0.png" 
+                        alt="Dartmouth College" 
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+              </Carousel>
             </div>
           </AnimatedSection>
         </div>
