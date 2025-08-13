@@ -1,0 +1,344 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #FDF8EC 0%, #F5E6D3 100%);
+    color: #2D1810;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.header {
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #B85C3A;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2D1810;
+    margin-bottom: 0;
+}
+
+/* Description */
+.description {
+    margin-bottom: 3rem;
+}
+
+.description p {
+    font-size: 1.125rem;
+    color: #2D1810;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2D1810;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.875rem;
+    color: #2D1810;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Email Section */
+.email-section {
+    margin-bottom: 2rem;
+}
+
+.email-title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #2D1810;
+    margin-bottom: 1.5rem;
+}
+
+.email-form {
+    max-width: 450px;
+    margin: 0 auto 1rem;
+}
+
+.form-group {
+    display: flex;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.form-group input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    color: #2D1810;
+    border-radius: 8px;
+}
+
+.form-group input::placeholder {
+    color: #8B7355;
+}
+
+.submit-btn {
+    background: #B85C3A;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    background: #A04A2A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(184, 92, 58, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: #2D1810;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+/* Form Message */
+.form-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .countdown {
+        gap: 1rem;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 1rem 0.75rem;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .description p {
+        font-size: 1rem;
+    }
+    
+    .countdown {
+        gap: 0.75rem;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .countdown-number {
+        font-size: 1.75rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+    
+    .email-title {
+        font-size: 1.125rem;
+    }
+}
+
+/* Apply Now Section */
+.apply-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(45, 24, 16, 0.1);
+}
+
+.apply-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2D1810;
+    margin-bottom: 0.5rem;
+}
+
+.apply-description {
+    font-size: 1rem;
+    color: #2D1810;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.apply-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #E75E24 0%, #B85C3A 100%);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 94, 36, 0.3);
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 94, 36, 0.4);
+    background: linear-gradient(135deg, #D54E1A 0%, #A84A2A 100%);
+}
+
+.apply-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsive for Apply section */
+@media (max-width: 768px) {
+    .apply-section {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    
+    .apply-title {
+        font-size: 1.25rem;
+    }
+    
+    .apply-btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .apply-title {
+        font-size: 1.125rem;
+    }
+    
+    .apply-description {
+        font-size: 0.875rem;
+    }
+    
+    .apply-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+} 

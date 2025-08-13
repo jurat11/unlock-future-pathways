@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E75E24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B85C3A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main content -->
+  <g transform="translate(60, 0)">
+    <!-- Logo/Icon area -->
+    <circle cx="150" cy="200" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+    <circle cx="150" cy="200" r="25" fill="white"/>
+    <text x="150" y="210" text-anchor="middle" fill="#E75E24" font-family="Arial, sans-serif" font-size="24" font-weight="bold">U</text>
+    
+    <!-- Main title -->
+    <text x="240" y="180" fill="white" font-family="Arial, sans-serif" font-size="56" font-weight="bold">Unlock Uzbekistan</text>
+    <text x="240" y="230" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="28">Higher Education Guidance</text>
+    
+    <!-- Description -->
+    <text x="80" y="320" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="24">Apply for personalized guidance and support</text>
+    <text x="80" y="360" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="24">for your higher education journey</text>
+    
+    <!-- Call to action -->
+    <rect x="80" y="420" width="200" height="50" rx="25" fill="white"/>
+    <text x="180" y="450" text-anchor="middle" fill="#E75E24" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Apply Now</text>
+    
+    <!-- Decorative elements -->
+    <circle cx="950" cy="150" r="80" fill="rgba(255,255,255,0.1)"/>
+    <circle cx="1050" cy="450" r="60" fill="rgba(255,255,255,0.08)"/>
+  </g>
+</svg>
